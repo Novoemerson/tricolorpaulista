@@ -1,1 +1,1 @@
-abc
+onsole.log("Tricolor Paulista carregado!");
