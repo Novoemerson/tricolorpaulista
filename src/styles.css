@@ -1,87 +1,71 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tricolor Paulista</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo-container">
-            <img src="assets/logo.png" alt="Logo Tricolor Paulista">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Notícias</a></li>
-                <li><a href="#">Estatísticas</a></li>
-                <li><a href="#">Fórum</a></li>
-                <li><a href="#">Vídeos</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+/* Configuração geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
 
-    <main>
-        <section id="destaques">
-            <h2>Últimas Notícias</h2>
-            <div id="noticias">
-                <article class="noticia">
-                    <img src="assets/news1.jpg" alt="Imagem da notícia">
-                    <h3>São Paulo vence clássico!</h3>
-                    <p>O Tricolor Paulista venceu mais um clássico emocionante...</p>
-                </article>
-                <article class="noticia">
-                    <img src="assets/news2.jpg" alt="Imagem da notícia">
-                    <h3>Novo reforço anunciado!</h3>
-                    <p>São Paulo anuncia nova contratação para a temporada...</p>
-                </article>
-            </div>
-        </section>
+/* Cabeçalho */
+header {
+    background-color: #d40000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
 
-        <section id="classificacao">
-            <h2>Classificação do Campeonato</h2>
-            <table>
-                <tr>
-                    <th>Posição</th>
-                    <th>Time</th>
-                    <th>Pontos</th>
-                </tr>
-                <tr>
-                    <td>1º</td>
-                    <td>São Paulo</td>
-                    <td>32</td>
-                </tr>
-                <tr>
-                    <td>2º</td>
-                    <td>Palmeiras</td>
-                    <td>30</td>
-                </tr>
-            </table>
-        </section>
+.logo-container img {
+    width: 150px;
+}
 
-        <section id="forum">
-            <h2>Discussões da Torcida</h2>
-            <div id="comentarios">
-                <p>💬 João: "Grande vitória no clássico! Vamos São Paulo!"</p>
-                <p>💬 Maria: "Precisamos melhorar a defesa, mas seguimos firmes!"</p>
-            </div>
-        </section>
+/* Navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
-        <section id="videos">
-            <h2>Vídeos e Conteúdos Multimídia</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/EXEMPLO" frameborder="0" allowfullscreen></iframe>
-        </section>
+nav ul li {
+    margin: 0 15px;
+}
 
-        <section id="analises-ia">
-            <h2>Análises Esportivas com IA</h2>
-            <div id="resultado-ia"></div>
-        </section>
-    </main>
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    <script src="script.js"></script>
-    <script src="news_automation.js"></script>
-    <script src="ai_content.js"></script>
-</body>
-</html>
+/* Seções */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Notícias */
+.noticia {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.noticia img {
+    width: 150px;
+    margin-right: 15px;
+}
+
+/* Tabela de classificação */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
