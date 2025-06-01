@@ -46,6 +46,18 @@ section {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Notícias */
+.noticia {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.noticia img {
+    width: 150px;
+    margin-right: 15px;
+}
+
 /* Tabela de classificação */
 table {
     width: 100%;
