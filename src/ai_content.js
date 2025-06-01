@@ -1,5 +1,5 @@
 async function fetchAIContent(topic) {
-    const apiKey = "SUA_CHAVE_DA_API";
+    const apiKey = "7m1x1b8p4da9PKvPzSrFAjt7ryHRljK3dznRDu4g";
     const response = await fetch(`https://api.cohere.ai/generate?prompt=${topic}`, {
         method: "POST",
         headers: {
