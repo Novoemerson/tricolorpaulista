@@ -8,22 +8,61 @@
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao Tricolor Paulista!</h1>
+        <img src="assets/logo.png" alt="Logo Tricolor Paulista" class="logo">
         <nav>
             <ul>
                 <li><a href="#">Início</a></li>
                 <li><a href="#">Notícias</a></li>
                 <li><a href="#">Estatísticas</a></li>
+                <li><a href="#">Fórum</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <section id="destaques">
             <h2>Últimas Notícias</h2>
             <div id="noticias"></div>
         </section>
+
+        <section id="classificacao">
+            <h2>Classificação do Campeonato</h2>
+            <table>
+                <tr>
+                    <th>Posição</th>
+                    <th>Time</th>
+                    <th>Pontos</th>
+                </tr>
+                <tr>
+                    <td>1º</td>
+                    <td>São Paulo</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>2º</td>
+                    <td>Palmeiras</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="forum">
+            <h2>Discussões da Torcida</h2>
+            <div id="comentarios">
+                <p>💬 João: "Grande vitória no clássico! Vamos São Paulo!"</p>
+                <p>💬 Maria: "Precisamos melhorar a defesa, mas seguimos firmes!"</p>
+            </div>
+        </section>
+
+        <section id="analises-ia">
+            <h2>Análises Esportivas com IA</h2>
+            <div id="resultado-ia"></div>
+        </section>
     </main>
+
     <script src="script.js"></script>
+    <script src="news_automation.js"></script>
+    <script src="ai_content.js"></script>
 </body>
 </html>
