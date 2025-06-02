@@ -1,379 +1,71 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<link rel="canonical" href="" />
-		<title>São Paulo FC | Tricolor Paulista - Notícias do São Paulo, resultados e próximos jogos</title>
-		<meta name="description" content="Notícias do São Paulo, próximos jogos e resultados do São Paulo. Você encontra tudo sobre o São Paulo no Tricolor Paulista" />
-		<meta name="keywords" content="São Paulo, São Paulo Futebol Clube, Notícias do São Paulo, Tricolor Paulista" />
-		<meta http-equiv="refresh" content="900"/>
-		<meta charset="windows-1252" />
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-	<meta name="robots" content="max-image-preview:large"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=10" />
-	<meta name="theme-color" content="#000000"/>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-	<link rel="shortcut icon" href="https://example.com/saopaulo-favicon.png" sizes="16x16 32x32 48x48" type="image/png" />
-	<!-- Fallback application metadata for legacy browsers -->
-	<meta name="application-name" content="Tricolor Paulista"/>
+:root {
+  /* Cores oficiais do São Paulo FC */
+  --spfc-red: 349 100% 38%;       /* #C10016 - Vermelho (paixão) */
+  --spfc-white: 0 0% 100%;        /* #FFFFFF - Branco (pureza) */
+  --spfc-black: 0 0% 0%;          /* #000000 - Preto (elegância) */
 
-	<link rel="icon" sizes="512x512" href="https://example.com/saopaulo-icon-512x512.png"/>
-	<!-- Add to homescreen for Chrome on Android -->
-	<meta name="mobile-web-app-capable" content="yes">
-	<link rel="shortcut icon" sizes="192x192" href="https://example.com/saopaulo-touch-icon-192x192.png"/>
-	<link rel="shortcut icon" sizes="196x196" href="https://example.com/saopaulo-touch-icon-196x196.png"/>
+  --background: var(--spfc-white);
+  --foreground: var(--spfc-black);
+  --card: var(--spfc-white);
+  --card-foreground: var(--spfc-black);
+  --popover: var(--spfc-white);
+  --popover-foreground: var(--spfc-black);
+  /* CORES PRINCIPAIS */
+  --primary: var(--spfc-red);     
+  --primary-foreground: var(--spfc-white);
+  --secondary: var(--spfc-black);
+  --secondary-foreground: var(--spfc-white);
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: var(--spfc-red);
+  --accent-foreground: var(--spfc-white);
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: var(--spfc-white);
+  --border: var(--spfc-red);
+  --input: var(--spfc-red);
+  --ring: var(--spfc-red);
+  --radius: 0.5rem;
+  /* Paleta para gráficos (mantém vermelho + tons neutros) */
+  --chart-1: 349 100% 38%;       /* Vermelho SPFC */
+  --chart-2: 0 0% 90%;            /* Cinza claro */
+  --chart-3: 0 0% 50%;            /* Cinza médio */
+  --chart-4: 0 0% 20%;            /* Cinza escuro */
+  --chart-5: 0 0% 0%;             /* Preto */
+}
 
-	<!-- Add to homescreen for Safari on iOS -->
-	<meta name="apple-mobile-web-app-title" content="Tricolor Paulista"/>
-	<meta name="apple-mobile-web-app-capable" content="yes"/>
-	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-	<link rel="apple-touch-icon" href="https://example.com/saopaulo-touch-icon-152x152.png"/>
-
-	<link rel="apple-touch-icon-precomposed" href="//example.com/saopaulo-touch-icon-precomposed.png"/>
-	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://example.com/saopaulo-touch-icon-120x120.png"/>
-	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://example.com/saopaulo-touch-icon-152x152.png"/>
-	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://example.com/saopaulo-touch-icon-180x180.png"/>
-
-	<!-- Tile icon for Win8 (144x144 + tile color) -->
-	<meta name="msapplication-TileImage" content="https://example.com/saopaulo-tile-144x144.png"/>
-	<meta name="msapplication-TileColor" content="#000000"/>
-
-	<!-- manifest -->
-	<link rel="manifest" href="/manifest.json?v=65"/>
-
-	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
-
-	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/ginkglnlpcgmjafipbkpfoimoaoabami">
-	
-	<meta property="fb:app_id" content="169492406456685" />	
-	<meta property="fb:pages" content="306026178972" />		
-
-	<link rel="image_src" href="https://example.com/tricolor_share.jpg" />
-	<meta property="og:image" content="https://example.com/tricolor_share.jpg" />	
-	<meta property="og:image:secure_url" content="https://example.com/tricolor_share.jpg" />	
-	<meta property="og:image:url" content="https://example.com/tricolor_share.jpg" />		
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="600">
-	<meta property="article:publisher" content="Tricolor Paulista"/>
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="Tricolor Paulista"/>
-	<meta property="og:title" content="São Paulo FC | Tricolor Paulista - Notícias do São Paulo, resultados e próximos jogos" />	
-	<meta property="og:description" content="Notícias do São Paulo, próximos jogos e resultados do São Paulo. Você encontra tudo sobre o São Paulo no Tricolor Paulista" />	
-	<meta property="og:url" content="https://www.tricolorpaulista.com.br/" />
-
-	<meta property="twitter:account_id" content="4503599627804636" />
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:creator" content="@TricolorPaulista">
-	<meta name="twitter:site" content="@TricolorPaulista">
-	<meta name="twitter:title" content="São Paulo FC | Tricolor Paulista - Notícias do São Paulo, resultados e próximos jogos">
-	<meta name="twitter:description" content="Notícias do São Paulo, próximos jogos e resultados do São Paulo. Você encontra tudo sobre o São Paulo no Tricolor Paulista">
-	<meta name="twitter:image" content="https://example.com/tricolor_share.jpg" />		
-	<meta name="script" content="-index"/>
-
-	<link rel="preload" href="/fontes/cuprum-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="/fontes/cuprum-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="/fontes/yanone-kaffeesatz-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="/fontes/yanone-kaffeesatz-v18-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
- 
-	<meta name="google-signin-client_id" content="760323263491-l1n6f1nl5bm6m3nh3skpcl3m0vmsns5o.apps.googleusercontent.com"/>
-	<link href="//api.tricolorpaulista.com.br/css/min/default.css?v=495495" rel="stylesheet" type="text/css" />
-	
-	<link rel="preload" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js" as="script">
-	<link rel="preload" href="https://tag.curiosidadesdigitais.com/tricolor_aps.100.js" as="script">
-	<link rel="preload" href="https://tag.curiosidadesdigitais.com/prebid7.49.0.js" as="script">
-		
-<script data-cfasync="false">
-	window.adnet = 'programatica';
-    window.googletag = window.googletag || {cmd: []};
-    var gmAdCmds = gmAdCmds || [];
-    var pbjs = pbjs || {que: []};
-
-    var gmAdSettings = {
-      bidders: {
-        smart: {siteId: 516998, pageId: 1618518},
-        projectagora: true,
-        medianet: {cid: '8CU51R5ON'},
-        rubicon: {accountId: '24696', siteId: '430716'},
-        teads: {pageId: 148898}
-      },
-      useLazyAds: true, 
-      reload: 30,
-      rootAdUnit: '/3600946',
-      targeting: [
-		{name: 'page_id', value: 'a1fc0f21c856f9ffc669afc95c161906'},
-		{name: 'tipo_pagina', value: 'home'},
-		{name: 'categorias', value: ['desktop']}
-      ]
-    };
-</script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-9175663-1" data-cfasync="false"></script>
-	<script type="05bb014d36fbb1f346af5060-text/javascript">
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-9175663-1');
-		gtag('config', 'G-7M4WJJJHJ2');
-		gtag('event', 'Pageview de conteudo', {
-		  'area': 'home',
-		  'subarea': 'desktop'
-		});
-		gtag('event', 'Versao', {
-		  'tipo': 'desktop',
-		  'subtipo': 'cacheado'
-		});
-	</script>
-		
-	<link href="/css/fontes/home.css?v4=1" rel="stylesheet" type="text/css"/>  
-	<link href="//api.tricolorpaulista.com.br/css/min/__interacoes_artigo.css?v4=15" rel="stylesheet" type="text/css" />
-	<link href="//api.tricolorpaulista.com.br/css/min/index.css?v4=88495" rel="stylesheet" type="text/css"/>  
-    </head>
-	<body class="home">
-		<div id="wrap">
-			<div id="header_logo_barra" class="no_mb kto sponsored sticky pinned">
-				<a href="http://tricolor.me/kto" target="_blank" rel="nofollow sponsored" title="Venha fazer parte da KTO">
-					Venha fazer parte da KTO
-					<span class="legal">18+<br/>Jogue com responsabilidade</span>
-				</a>
-			</div>
-		
-			<div id="content_header" >
-				<header id="header" class="container header_logo_barra">
-					<span id="bt_home"><a href="/" title="Página inicial do site Tricolor Paulista">Tricolor Paulista</a></span>
-					<nav id="menu" class="link_apostas">
-						<ul>
-							<li data-area="noticias" class="noticias"><a href="/noticias-do-saopaulo">Notícias</a></li>
-							<li data-area="forum" class="forum"><a href="/forum-do-saopaulo/">Fórum</a></li>
-							<li data-area="videos" class="videos"><a href="/videos-do-saopaulo/">Vídeos</a></li>
-							<li data-area="jogos" class="jogos"><a href="/jogos/">Jogos</a></li>
-							<li data-area="colunas" class="colunas"><a href="/colunas/">Colunas</a></li>
-							<li data-area="classificacao" class="classificacao"><a href="/tabela-de-classificacao/campeonato_paulista/">Classificação</a></li>
-							<li data-area="apostas" class="apostas"><a href="/apostas" >Apostas</a></li>
-							<li data-area="mais" class="mais"><a href="/historia-do-saopaulo/">Mais+</a></li>
-							<li data-area="buscar" class="buscar"><a href="/busca/">Buscar</a></li>
-							<li data-area="login" id="menu_login" class="entrar"><a href="/login" class="bt_login_header_menu"><span class="entrar">Entrar</span><span class="cadastrar">Cadastrar</span></a></li>
-						</ul>
-					</nav>
-				</header>
-				<button id="bt_a2hs" title="Acesse o Tricolor Paulista de forma mais rápida com o nosso App">Baixe o APP do Tricolor Paulista</button>
-			</div>
-
-			<div id="pbmt_sticky_leaderboard" class="pbmt publicidade_970x90">
-				<div class="pbmt">
-					<a href="#" class="fechar_pbmt"><span>x</span></a>
-					<div>
-						<div class="pbmt publicidade_Rodape_Fixo_Desktop publicidade_970x90">
-							<div id="place_gam_Rodape_Fixo_Desktop"></div>
-							<script type="05bb014d36fbb1f346af5060-text/javascript">
-							  gmAdCmds.push({command: 'gmAdUnit', params: {
-								type: 'banner', gam: '1025', divID: 'place_gam_Rodape_Fixo_Desktop',
-								sizes: [[980,90],[970,90],[950,90],[728,90]],
-								mapping: 'horizontal', 
-								reloadable: true,
-								bidders : {
-								  smart: 113551,
-								  rubicon: '2461576',
-								  projectagora: 25473693,
-								  medianet: '555887267',
-								  teads: false,
-								  useNative:false
-								}
-							  }});
-							</script>
-						</div>
-					</div>
-				</div>
-			</div>
-    
-			<div id="content">
-				<div id="conteudo">
-					<section id="mosaico" class="container clearfix ">
-						<article id="destaque_1" class="unico">
-							<div class="header">
-								<p class="totais"> 
-									<span class="visitas">4.1 mil </span>
-									<span class="comentarios_na_noticia">49</span>
-								</p>
-								<h4><a href="/noticias-do-saopaulo/507838/saopaulo-divulga-lista-de-relacionados-com-tres-ausencias-e-uma-novidade-contra-o-racing" title="">Relacionados</a></h4>
-							</div>
-							<figure>
-								<a href="/noticias-do-saopaulo/507838/saopaulo-divulga-lista-de-relacionados-com-tres-ausencias-e-uma-novidade-contra-o-racing" title="">
-									<img src="//cdn.tricolorpaulista.com.br/_upload/_crop/fw/941/fotos-do-saopaulo/w941/2025/05/13/jogador_saopaulo.jpg" alt="Jogador do São Paulo no treino" width="941" height="697"/>
-								</a>
-							</figure>
-							<div class="chamada">
-								<h2><a href="/noticias-do-saopaulo/507838/saopaulo-divulga-lista-de-relacionados-com-tres-ausencias-e-uma-novidade-contra-o-racing">São Paulo divulga lista de relacionados com três ausências e uma novidade contra o Racing</a></h2>
-							</div>
-							<div class="interacoes interacoes_artigo ">
-								<a href="#" class="compartilhamentos" data-valor="7" data-idConteudo="507838" data-tipo="3" data-param-url="/noticias-do-saopaulo/507838/saopaulo-divulga-lista-de-relacionados-com-tres-ausencias-e-uma-novidade-contra-o-racing">
-									<em>compartilharmentos</em><span>7</span>
-								</a>
-								<div class="likes_internos" data-idLikeItem="25821516" data-idConteudo="507838" data-nick="" data-tipo="3">
-									<a href="#" class="bt_like_interno like_interno"><em>gostei</em><span>55</span></a>
-									<a href="#" class="bt_like_interno dislike_interno"><em>não gostei</em><span>7</span></a>
-								</div>
-							</div>
-						</article>
-						
-						<div class="banner_triplo">
-							<div class="pbmt publicidade_billboard publicidade_970x250">
-								<div id="place_gam_101"></div>
-								<script type="05bb014d36fbb1f346af5060-text/javascript">
-								  gmAdCmds.push({command: 'gmAdUnit', params: {
-									type: 'banner', gam: '1025', divID: 'place_gam_101',
-									sizes: [[728,90],[970,250],[980,120],[930,180],[920,250],[980,90],[970,90],[950,90],[750,100],'fluid'],
-									mapping: 'horizontal', 
-									reloadable: true,
-									bidders : {
-									  smart: 113551,
-									  rubicon: '2461576',
-									  projectagora: 25473693,
-									  medianet: '555887267',
-									  teads: false,
-									  useNative:false
-									}
-								  }});
-								</script>
-							</div>
-						</div>
-						
-						<article id="live_youtube" class="unico tricolor_paulista">
-							<div class="header" style="min-height:55px;">
-								<h4 style="float: right; margin-top: 5px; margin-right: 20px;">
-									<a href="/videos-do-saopaulo/119986/memphis-1-lesao-desde-chegada-ao-saopaulo-impeachment-de-augusto-melo-data-para-votacao"  target="_blank">Tricolor Paulista ao vivo no Youtube</a>
-								</h4>
-								<div class="wrap_button">
-									<script defer async src="https://apis.google.com/js/platform.js" type="05bb014d36fbb1f346af5060-text/javascript"></script>
-									<div class="g-ytsubscribe" data-channel="tricolorpaulista" data-layout="full" data-theme="default" data-count="default"></div>
-								</div>
-							</div>
-							<figure>
-								<a href="/videos-do-saopaulo/119986/memphis-1-lesao-desde-chegada-ao-saopaulo-impeachment-de-augusto-melo-data-para-votacao"  target="_blank">
-									<div class="image_wrapper_cls" style="padding-bottom: 235.250%"> 
-										<img loading="lazy" src="//cdn.tricolorpaulista.com.br/_upload/video/2025/05/jogador_saopaulo_video.jpg" alt="Atualizações do São Paulo FC" width="400" height="941" />
-									</div>
-								</a>
-							</figure>
-							<div class="chamada">
-								<h2><a href="/videos-do-saopaulo/119986/memphis-1-lesao-desde-chegada-ao-saopaulo-impeachment-de-augusto-melo-data-para-votacao">Atualizações sobre lesões e convocações no São Paulo FC</a></h2>
-							</div>	
-						</article>
-						
-						<!-- Demais artigos adaptados seguindo o mesmo padrão de substituição -->
-						<!-- ... (restante dos artigos com substituições de Corinthians para São Paulo) ... -->
-						
-					</section>
-					
-					<div class="banner_triplo container">
-						<div class="pbmt publicidade_billboard publicidade_970x250">
-							<div id="place_gam_2"></div>
-							<script type="05bb014d36fbb1f346af5060-text/javascript">
-							  gmAdCmds.push({command: 'gmAdUnit', params: {
-								type: 'banner', gam: '1025', divID: 'place_gam_2',
-								sizes: [[728,90],[970,250],[980,120],[930,180],[920,250],[980,90],[970,90],[950,90],[750,100],'fluid'],
-								mapping: 'horizontal', 
-								reloadable: true,
-								bidders : {
-								  smart: 113551,
-								  rubicon: '2461576',
-								  projectagora: 25473693,
-								  medianet: '555887267',
-								  teads: false,
-								  useNative:false
-								}
-							  }});
-							</script>
-						</div>
-					</div>
-					
-					<section id="ultimas_noticias_lista">
-						<div class="container">
-							<h3 class="tit_area"><a href="/noticias-do-saopaulo/">Últimas notícias</a></h3>
-							<div class="lista clearfix">
-								<div class="pbmt_left">
-									<div class="pbmt publicidade_halfpage publicidade_300x600">
-										<div id="place_gam_100"></div>
-										<script type="05bb014d36fbb1f346af5060-text/javascript">
-										  gmAdCmds.push({command: 'gmAdUnit', params: {
-											type: 'banner', gam: '1025', divID: 'place_gam_100',
-											sizes: [[300,600,336,280],[336,312],[300,250],[336,280],[320,100],[320,50],[320,480],[240,400],[300,300],[250,250],[200,200],[180,150],[125,125],[320,320],'fluid'],
-											mapping: 'horizontal', 
-											reloadable: true,
-											bidders : {
-											  smart: 113551,
-											  rubicon: '2461576',
-											  projectagora: 25473693,
-											  medianet: '555887267',
-											  teads: false,
-											  useNative:false
-											}
-										  }});
-										</script>
-									</div>
-								</div>
-								<div class="ultimas">
-									<!-- Lista de notícias adaptadas -->
-									<!-- ... -->
-								</div>
-							</div>
-						</div>
-					</section>
-					
-					<!-- Demais seções adaptadas (Fórum, Especial, Colunas, Jogos) -->
-					<!-- ... -->
-					
-				</div>
-			</div>
-			
-			<footer id="footer">
-				<div class="links_principais">
-					<div class="container">
-						<div id="megafooter">
-							<!-- Rodapé adaptado -->
-							<!-- ... -->
-						</div>
-					</div>
-					<a href="https://www.terra.com.br/" title="Terra" id="selo_terra_parceria">Terra</a>
-				</div>
-				<div id="outros_links">
-					<div class="container">
-						<div id="links_footer_esquerda">
-							<p class="anuncie_aqui"><a href="/anuncie-aqui/" id="bt_pagina_inicial">anuncie aqui</a></p>
-							<p class="contato"><a href="/contato/">contato</a></p>
-							<p class="expediente"><a href="/expediente/">Expediente</a></p>
-							<p class="regras_da_casa"><a href="/regras-da-casa/">Regras da comunidade</a></p>
-							<p class="politica_de_privacidade"><a href="/politica-de-privacidade/">Política de privacidade</a></p>
-							<p class="nao_oficial">Desde 2025, o Tricolor Paulista é feito por são-paulinos para são-paulinos, mas não é o site oficial do São Paulo FC.</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
-		
-		<script type="text/javascript" src="//api.tricolorpaulista.com.br/js/min/pack.js?v=36091" data-cfasync="false"></script>
-		<script type="module" async="true" data-cfasync="false" src="/_push.js?v=bd7d0019112caf49d9f4d4cbaa5aefe8"></script>
-		<script src="https://apis.google.com/js/platform.js?onload=renderButtonGoogleSignIn" async defer data-cfasync="false"></script>
-		<script type="05bb014d36fbb1f346af5060-text/javascript">
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-9175663-1', 'tricolorpaulista.com.br');
-			ga('require', 'displayfeatures');
-			ga('send', 'pageview');
-			ga('send', 'event', 'Pageview de conteudo', 'home', 'desktop',{ nonInteraction: true});
-		</script>
-		<script type="05bb014d36fbb1f346af5060-text/javascript">
-			window.terra_info_channel = "esportes";
-			window.terra_info_channeldetail = "tricolorpaulista";
-		</script>
-		<script type="05bb014d36fbb1f346af5060-text/javascript" src="https://www.terra.com.br/globalSTATIC/fe/zaz-app-t360-navbar-partner/_js/metrics.js" async></script>
-		<script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async type="05bb014d36fbb1f346af5060-text/javascript"></script>
-		<script src="https://tag.curiosidadesdigitais.com/prebid7.49.0.js" async type="05bb014d36fbb1f346af5060-text/javascript"></script>
-		<script src="https://tag.curiosidadesdigitais.com/tricolor_aps.100.js" async type="05bb014d36fbb1f346af5060-text/javascript"></script>
-		<script type="05bb014d36fbb1f346af5060-text/javascript">
-			gmAdCmds.push({command: 'gmAdRunBids'});
-		</script>
-	</body>
-</html>
+.dark {
+  /* Modo escuro com ênfase no preto e detalhes vermelhos */
+  --background: var(--spfc-black); 
+  --foreground: var(--spfc-white);
+  --card: var(--spfc-black);
+  --card-foreground: var(--spfc-white);
+  --popover: var(--spfc-black);
+  --popover-foreground: var(--spfc-white);
+  --primary: var(--spfc-red);
+  --primary-foreground: var(--spfc-white);
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: var(--spfc-white);
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: var(--spfc-red);
+  --accent-foreground: var(--spfc-white);
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: var(--spfc-white);
+  --border: var(--spfc-red);
+  --input: var(--spfc-red);
+  --ring: var(--spfc-red);
+  /* Gráficos em modo escuro */
+  --chart-1: 349 100% 45%;        /* Vermelho mais vibrante */
+  --chart-2: 0 0% 70%;            /* Cinza claro */
+  --chart-3: 0 0% 40%;            /* Cinza médio */
+  --chart-4: 0 0% 20%;            /* Cinza escuro */
+  --chart-5: 0 0% 100%;           /* Branco */
+}
