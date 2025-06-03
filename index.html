@@ -432,5 +432,14 @@
 
     <!-- JavaScript -->
     <script src="src/script.js"></script>
+
+<script>
+    // TESTE: Forçar estilo mobile
+    if (window.innerWidth <= 768) {
+        document.querySelector('.forum-container').style.display = 'flex';
+        document.querySelector('.forum-container').style.overflowX = 'auto';
+    }
+</script>
+    
 </body>
 </html>
