@@ -106,3 +106,69 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Funções específicas para o Fórum
+function initForum() {
+    // Troca de abas
+    const abas = document.querySelectorAll('[data-aba]');
+    const conteudoAbas = document.querySelectorAll('.aba-forum');
+    
+    abas.forEach(aba => {
+        aba.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove classe ativa de todas as abas
+            abas.forEach(a => a.parentElement.classList.remove('ativo'));
+            conteudoAbas.forEach(c => c.classList.remove('ativa'));
+            
+            // Adiciona classe ativa na aba clicada
+            this.parentElement.classList.add('ativo');
+            const abaAlvo = this.getAttribute('data-aba');
+            document.getElementById(abaAlvo).classList.add('ativa');
+        });
+    });
+    
+    // Sistema de likes
+    const botoesLike = document.querySelectorAll('.bt-like-interno');
+    
+    botoesLike.forEach(botao => {
+        botao.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const isLike = this.classList.contains('like-interno');
+            const spanContador = this.querySelector('span');
+            let contador = parseInt(spanContador.textContent);
+            
+            // Simulação - na prática seria uma chamada AJAX
+            if (this.classList.contains('active')) {
+                // Remove o like/dislike
+                this.classList.remove('active');
+                spanContador.textContent = contador - 1;
+            } else {
+                // Adiciona o like/dislike
+                const outroBotao = this.parentElement.querySelector('.bt-like-interno:not(.' + this.classList[1] + ')');
+                
+                if (outroBotao.classList.contains('active')) {
+                    outroBotao.classList.remove('active');
+                    const outroSpan = outroBotao.querySelector('span');
+                    outroSpan.textContent = parseInt(outroSpan.textContent) - 1;
+                }
+                
+                this.classList.add('active');
+                spanContador.textContent = contador + 1;
+            }
+        });
+    });
+    
+    // Carregar mais tópicos (scroll infinito)
+    window.addEventListener('scroll', function() {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+            // Simulação de carregamento de mais tópicos
+            console.log('Carregar mais tópicos...');
+            // Na prática, seria uma chamada AJAX para buscar mais tópicos
+        }
+    });
+}
+
+// Inicializar o fórum quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', initForum);
