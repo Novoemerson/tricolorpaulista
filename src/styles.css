@@ -1428,3 +1428,8 @@ body::after {
 .forum-container::-webkit-scrollbar-thumb {
     background: var(--spfc-red); /* Use sua cor principal */
 }
+
+/* TESTE - Remova depois de confirmar */
+.forum-topic {
+    border: 3px solid red !important;
+}
