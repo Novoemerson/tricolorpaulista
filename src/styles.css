@@ -351,6 +351,27 @@ img {
     margin-top: 30px;
 }
 
+/* Adicione isto no final - Layout para mobile */
+@media (max-width: 768px) {
+    .forum-container {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        gap: 15px;
+    }
+    
+    .topic-stats {
+        flex-direction: row; /* Mantém em linha mesmo em mobile */
+        flex-wrap: wrap;
+    }
+    
+    .topic-meta {
+        flex-direction: column; /* Empilha os elementos de meta */
+        gap: 5px;
+    }
+    
+    .forum-topic {
+        padding: 15px;
+    }
+}
 /* Seção de estatísticas e jogos */
 .stats-section {
     display: grid;
