@@ -187,7 +187,125 @@
         </article>
     </div>
 
+<!-- Substitua a seção de tópicos do fórum por este código -->
+<section id="forum-tricolor" class="forum-container">
+    <div class="forum-header parallax-background">
+        <div class="forum-overlay"></div>
+        <h2>Fórum Tricolor</h2>
+        <p>Debata sobre o São Paulo FC com outros torcedores</p>
+    </div>
 
+    <div class="forum-content">
+        <!-- Tópicos Fixados -->
+        <div class="topicos-fixados">
+            <div class="topico-card fixado">
+                <div class="topico-interactions">
+                    <div class="like-system">
+                        <button class="like-btn" data-topic="45721">
+                            <span class="icon">👍</span>
+                            <span class="count">142</span>
+                        </button>
+                        <button class="dislike-btn" data-topic="45721">
+                            <span class="icon">👎</span>
+                            <span class="count">8</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="topico-image">
+                    <img src="assets/forum/topico1.jpg" alt="Calleri artilheiro" class="hover-zoom">
+                </div>
+                <div class="topico-stats">
+                    <span class="replies">87 respostas</span>
+                    <span class="views">3.2k visualizações</span>
+                </div>
+                <div class="topico-content">
+                    <h3><a href="#">Calleri é o melhor centroavante do Brasil atualmente?</a></h3>
+                    <div class="topico-meta">
+                        <span class="author">Por: <strong>TricolorFan</strong></span>
+                        <span class="last-reply">Última resposta: 15 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Abas de Navegação -->
+        <div class="forum-tabs">
+            <ul>
+                <li class="active" data-tab="popular"><span>Populares</span></li>
+                <li data-tab="recent"><span>Recentes</span></li>
+                <li data-tab="my-topics"><span>Meus Tópicos</span></li>
+                <li data-tab="following"><span>Acompanhando</span></li>
+            </ul>
+        </div>
+
+        <!-- Lista de Tópicos (Populares) -->
+        <div class="topicos-lista active-tab" id="popular-tab">
+            <article class="topico-item" data-topic="45722">
+                <div class="topico-avatar">
+                    <img src="assets/forum/avatar1.jpg" alt="Usuário" class="hover-grow">
+                    <span class="online-status"></span>
+                </div>
+                <div class="topico-main">
+                    <h3><a href="#" class="hover-underline">Análise tática: O 4-3-3 do Dorival está funcionando?</a></h3>
+                    <div class="topico-meta">
+                        <span class="author">Por: <strong>SPFC_Tatico</strong></span>
+                        <span class="category">Tática</span>
+                        <span class="time">25 minutos atrás</span>
+                    </div>
+                </div>
+                <div class="topico-stats">
+                    <span class="replies">64 respostas</span>
+                    <span class="views">1.8k visualizações</span>
+                </div>
+                <div class="topico-last">
+                    <img src="assets/forum/avatar2.jpg" alt="Última resposta" class="hover-grow">
+                    <span class="last-reply">por <strong>RogérioCeni</strong></span>
+                </div>
+            </article>
+
+            <article class="topico-item highlight" data-topic="45723">
+                <div class="topico-avatar">
+                    <img src="assets/forum/avatar3.jpg" alt="Usuário" class="hover-grow">
+                    <span class="online-status active"></span>
+                </div>
+                <div class="topico-main">
+                    <h3><a href="#" class="hover-underline">[POLL] Quem deve ser o próximo reforço?</a></h3>
+                    <div class="topico-meta">
+                        <span class="author">Por: <strong>DiretoriaSeca</strong></span>
+                        <span class="category">Mercado</span>
+                        <span class="time">1 hora atrás</span>
+                    </div>
+                </div>
+                <div class="topico-stats">
+                    <span class="replies">132 respostas</span>
+                    <span class="views">4.5k visualizações</span>
+                </div>
+                <div class="topico-last">
+                    <img src="assets/forum/avatar4.jpg" alt="Última resposta" class="hover-grow">
+                    <span class="last-reply">por <strong>Casadas</strong></span>
+                </div>
+            </article>
+        </div>
+
+        <!-- Outras abas (conteúdo seria carregado via AJAX) -->
+        <div class="topicos-lista" id="recent-tab"></div>
+        <div class="topicos-lista" id="my-topics-tab"></div>
+        <div class="topicos-lista" id="following-tab"></div>
+
+        <!-- Paginação -->
+        <div class="forum-pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <span>...</span>
+            <a href="#">10</a>
+            <a href="#" class="next">Próxima →</a>
+        </div>
+    </div>
+
+    <!-- Efeito de Partículas no Fundo -->
+    <div class="particles-background"></div>
+</section>
 
 
                             </a>
