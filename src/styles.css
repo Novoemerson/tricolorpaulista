@@ -1422,3 +1422,9 @@ body::after {
         white-space: nowrap; /* Mantém o conteúdo em uma linha */
     }
 }
+.forum-container::-webkit-scrollbar {
+    height: 4px;
+}
+.forum-container::-webkit-scrollbar-thumb {
+    background: var(--spfc-red); /* Use sua cor principal */
+}
