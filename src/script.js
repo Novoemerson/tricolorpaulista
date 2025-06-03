@@ -234,3 +234,21 @@ if (window.innerWidth <= 768) {
     el.style.display = 'block';
   });
 }
+
+
+// Verificação ao carregar e redimensionar
+function checkLayout() {
+    const isMobile = window.innerWidth <= 768;
+    console.log(`Modo: ${isMobile ? 'MOBILE' : 'DESKTOP'}`);
+    
+    if (isMobile) {
+        document.body.classList.add('mobile-view');
+        document.body.classList.remove('desktop-view');
+    } else {
+        document.body.classList.add('desktop-view');
+        document.body.classList.remove('mobile-view');
+    }
+}
+
+window.addEventListener('load', checkLayout);
+window.addEventListener('resize', checkLayout);
