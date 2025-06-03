@@ -572,52 +572,62 @@ tr:hover {
 }
 
 /* Responsividade */
-@media (max-width: 992px) {
-    .main-feature {
-        grid-template-columns: 1fr;
-    }
-    
-    .stats-section {
-        grid-template-columns: 1fr;
-    }
-}
 
+/* Apenas para a lista de tópicos abaixo das abas */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+    .topicos-lista.active-tab {
+        display: flex !important;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 15px;
+        padding: 10px 15px;
+        margin: 0 -15px;
+        scrollbar-width: none; /* Esconde a barra no Firefox */
     }
-    
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background-color: var(--spfc-white);
-        flex-direction: column;
+
+    .topicos-lista.active-tab::-webkit-scrollbar {
+        display: none; /* Esconde a barra no Chrome/Safari */
+    }
+
+    .topico-item {
+        flex: 0 0 auto;
+        width: 90vw;
+        max-width: 400px;
+        display: flex !important;
+        flex-direction: row;
         align-items: center;
-        padding: 40px 0;
-        transition: left 0.3s ease;
+        padding: 12px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    
-    .nav-menu.active {
-        left: 0;
+
+    .topico-avatar {
+        margin-right: 10px;
     }
-    
-    .nav-menu li {
-        margin: 15px 0;
+
+    .topico-main {
+        flex-grow: 1;
+        min-width: 0;
     }
-    
-    .hero-banner h1 {
-        font-size: 2.2rem;
+
+    .topico-stats {
+        display: flex;
+        margin-left: 10px;
+        flex-direction: column;
+        align-items: flex-end;
     }
-    
-    .hero-banner p {
-        font-size: 1rem;
+
+    .topico-last {
+        display: none; /* Ocultamos para economizar espaço */
     }
-    
-    .forum-container {
-        grid-template-columns: 1fr;
+
+    .topico-meta {
+        display: flex;
+        gap: 8px;
+        margin-top: 5px;
+        flex-wrap: wrap;
     }
 }
 
