@@ -434,11 +434,27 @@
     <script src="src/script.js"></script>
 
 <script>
-    // TESTE: Forçar estilo mobile
+// Forçar verificação de mobile
+function checkMobileLayout() {
     if (window.innerWidth <= 768) {
-        document.querySelector('.forum-container').style.display = 'flex';
-        document.querySelector('.forum-container').style.overflowX = 'auto';
+        // Remove classes de grid/desktop
+        document.querySelectorAll('.forum-container, .forum-topic').forEach(el => {
+            el.style.display = 'none';
+        });
+        
+        // Garante que a lista de tópicos está em bloco
+        document.querySelectorAll('.topicos-lista').forEach(el => {
+            el.style.display = 'block';
+        });
     }
+}
+
+// Executa ao carregar e redimensionar
+window.addEventListener('load', checkMobileLayout);
+window.addEventListener('resize', checkMobileLayout);
+
+// Debug: Mostra no console qual layout está sendo aplicado
+console.log('Mobile Layout:', window.innerWidth <= 768 ? 'ATIVADO' : 'desativado');
 </script>
     
 </body>
