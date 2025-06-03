@@ -1774,3 +1774,46 @@ body::after {
         white-space: nowrap;
     }
 }
+
+/* ============ VERSÃO DESKTOP ============ */
+.forum-section {
+    margin: 60px 0;
+}
+
+.forum-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.forum-topic {
+    background-color: var(--spfc-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ============ VERSÃO MOBILE ============ */
+@media (max-width: 768px) {
+    .forum-container {
+        display: block !important;
+    }
+    
+    .forum-topic {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    
+    /* Elementos que devem sumir no mobile */
+    .topic-avatar, 
+    .topic-meta .author-img {
+        display: none;
+    }
+    
+    /* Ajuste de espaçamento */
+    .topic-stats {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
