@@ -252,3 +252,18 @@ function checkLayout() {
 
 window.addEventListener('load', checkLayout);
 window.addEventListener('resize', checkLayout);
+
+// Restaurar comportamento original
+function restoreLayout() {
+  const forumContainer = document.querySelector('.forum-container');
+  if (window.innerWidth <= 768) {
+    forumContainer.style.display = 'block';
+    console.log("Modo Mobile Ativo");
+  } else {
+    forumContainer.style.display = 'grid';
+    console.log("Modo Desktop Ativo");
+  }
+}
+
+window.addEventListener('resize', restoreLayout);
+restoreLayout(); // Executa ao carregar
