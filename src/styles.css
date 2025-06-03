@@ -1399,3 +1399,24 @@ body::after {
         margin-bottom: 10px;
     }
 }
+/* Adicione isto no final do seu arquivo CSS */
+@media (max-width: 768px) {
+    .forum-container {
+        display: flex !important;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch; /* Suave rolagem no iOS */
+    }
+    
+    .forum-topic {
+        min-width: 280px; /* Largura mínima para cada card */
+        flex-shrink: 0; /* Impede que os itens encolham */
+    }
+    
+    .topic-stats,
+    .topic-meta {
+        white-space: nowrap; /* Mantém o conteúdo em uma linha */
+    }
+}
