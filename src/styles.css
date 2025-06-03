@@ -1451,3 +1451,85 @@ body::after {
 .forum-topic {
     border: 3px solid red !important;
 }
+
+/* Layout Mobile para Fórum Tricolor */
+@media (max-width: 768px) {
+    /* Tópicos Fixados */
+    #topicos-fixados {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 0 15px 15px;
+        margin: 0 -15px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    #topicos-fixados::after {
+        content: '';
+        padding-right: 15px;
+    }
+    
+    .topico-fixado {
+        scroll-snap-align: start;
+        min-width: 85%;
+        flex: 0 0 auto;
+    }
+    
+    /* Lista de Tópicos */
+    .topicos-lista {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .topico-item {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 10px;
+        padding: 15px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .topico-avatar {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+    }
+    
+    .topico-main {
+        grid-row: 1 / span 1;
+        grid-column: 2 / span 1;
+    }
+    
+    .topico-stats {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 2;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: #666;
+    }
+    
+    .topico-last {
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 2;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+    }
+    
+    /* Abas de navegação */
+    .forum-tabs ul {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+    
+    .forum-tabs li {
+        flex-shrink: 0;
+    }
+}
