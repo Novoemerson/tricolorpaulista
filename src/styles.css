@@ -1389,36 +1389,72 @@ body::after {
 }
 
 /* Responsivo */
+
+/* Apenas para os tópicos do fórum (não aplica aos fixados) */
 @media (max-width: 768px) {
-    .topico-card {
-        grid-template-columns: 1fr;
+    .topicos-lista.active-tab {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 15px;
+        padding: 0 10px;
     }
-    
-    .topico-image {
-        width: 100%;
-        height: 200px;
-    }
-    
+
     .topico-item {
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 120px;
+        padding: 12px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    
-    .topico-stats, .topico-last {
-        grid-column: span 2;
-        justify-content: flex-start;
-        flex-direction: row;
-        gap: 20px;
+
+    .topico-main {
+        order: 1;
+        margin-bottom: 8px;
     }
-    
-    .forum-tabs ul {
+
+    .topico-stats {
+        order: 3;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: auto;
+    }
+
+    .topico-avatar {
+        order: 2;
+        display: none; /* Ocultamos o avatar em mobile para economizar espaço */
+    }
+
+    .topico-last {
+        order: 4;
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
+
+    .topico-last img {
+        display: none; /* Ocultamos a imagem do avatar na última resposta */
+    }
+
+    .topico-meta {
+        display: flex;
+        gap: 8px;
         flex-wrap: wrap;
+        margin-top: 5px;
     }
-    
-    .forum-tabs li {
-        margin-bottom: 10px;
+
+    .topico-meta .category {
+        background: #f0f0f0;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.7rem;
     }
 }
+
 /* Adicione isto no final do seu arquivo CSS */
 @media (max-width: 768px) {
     body .forum-section .forum-container {
