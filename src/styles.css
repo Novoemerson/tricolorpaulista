@@ -1421,7 +1421,7 @@ body::after {
 }
 /* Adicione isto no final do seu arquivo CSS */
 @media (max-width: 768px) {
-    .forum-container {
+    body .forum-section .forum-container {
         display: flex !important;
         flex-direction: row;
         overflow-x: auto;
