@@ -1817,3 +1817,33 @@ body::after {
         gap: 5px;
     }
 }
+
+/* ===== RESTAURAR LAYOUT INICIAL ===== */
+/* Desktop: Grid com avatares */
+.forum-container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)) !important;
+  gap: 20px !important;
+}
+
+.forum-topic {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Mobile: Lista vertical (como no seu primeiro projeto) */
+@media (max-width: 768px) {
+  .forum-container {
+    display: block !important;
+  }
+  
+  .forum-topic {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Opcional: Esconder avatares no mobile */
+  .topic-avatar {
+    display: none !important;
+  }
+}
