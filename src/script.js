@@ -221,3 +221,16 @@ function initForum() {
         }, 100);
     }
 });
+
+// DEBUG INIT
+console.log("INICIANDO DEBUG:");
+console.log("Largura:", window.innerWidth);
+console.log("Mobile?", window.innerWidth <= 768);
+
+// FORÇAR LAYOUT MOBILE SE NECESSÁRIO
+if (window.innerWidth <= 768) {
+  console.log("APLICANDO LAYOUT MOBILE");
+  document.querySelectorAll('.forum-container').forEach(el => {
+    el.style.display = 'block';
+  });
+}
