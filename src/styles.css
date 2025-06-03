@@ -1008,18 +1008,36 @@ body::after {
 }
 
 /* Container do Fórum */
-.forum-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
 
-.forum-content {
-    padding: 30px;
+@media (max-width: 768px) {
+    .forum-container {
+        display: flex !important;
+        grid-template-columns: unset !important;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 10px 0;
+        margin: 0 -15px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .forum-container::after {
+        content: '';
+        padding-right: 15px;
+    }
+    
+    .forum-topic {
+        scroll-snap-align: start;
+        min-width: 85%;
+        flex: 0 0 auto;
+        margin: 0 0 0 15px;
+    }
+    
+    .topic-stats {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
 }
 
 /* Tópicos Fixados */
