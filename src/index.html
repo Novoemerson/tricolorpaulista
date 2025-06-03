@@ -1,67 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<link rel="canonical" href="" /><title> São Paulo | Tricolor Paulista - Notícias do São Paulo, resultados e próximos jogos </title><meta name="description" content="Notícias do São Paulo, próximos jogos e resultados do São Paulo. Você encontra tudo sobre o São Paulo no Tricolor Paulista" /><meta name="keywords" content="São Paulo, São Paulo Futebol Clube, Notícias do São Paulo, Tricolor Paulista" /><meta http-equiv="refresh" content="900"/><meta charset="windows-1252" />
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tricolor Paulista - Tudo sobre o São Paulo FC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="parallax">
+        <div class="header-content">
+            <h1>Tricolor Paulista</h1>
+            <p>Tudo sobre o São Paulo Futebol Clube</p>
+        </div>
+    </header>
 
-	<!-- Restante do código mantido igual -->
-	
-	<body class="home">
-		
-		<div id="wrap">
-		
-			<div id="header_logo_barra" class="no_mb kto sponsored sticky pinned">
-				<a href="http://tricolor.me/kto" target="_blank" rel="nofollow sponsored" title="Venha fazer parte da KTO">
-					Venha fazer parte da KTO									<span class="legal">18+<br/>Jogue com responsabilidade</span>
-				</a>
-			</div>
-			
-			<div id="content_header" >
-				<header id="header" class="container header_logo_barra">
-					<span id="bt_home"><a href="/" title="Página inicial do site Tricolor Paulista">Tricolor Paulista</a></span>
-					
-					<nav id="menu" class="link_apostas">
-						<ul>
-							<li data-area="noticias" class="noticias"><a href="/noticias-do-sao-paulo">Notícias</a></li>
-							<li data-area="forum" class="forum"><a href="/forum-do-sao-paulo/">Fórum</a></li>
-							<li data-area="videos" class="videos"><a href="/videos-do-sao-paulo/">Vídeos</a></li>
-							<li data-area="jogos" class="jogos"><a href="/jogos/">Jogos</a></li>
-							<li data-area="colunas" class="colunas"><a href="/colunas/">Colunas</a></li>
-							<li data-area="classificacao" class="classificacao"><a href="/tabela-de-classificacao/campeonato_paulista/">Classificação</a></li>
-							<li data-area="apostas" class="apostas"><a href="/apostas" >Apostas</a></li>
-							<li data-area="mais" class="mais"><a href="/historia-do-sao-paulo/">Mais+</a></li>
-							<li data-area="buscar" class="buscar"><a href="/busca/">Buscar</a></li>
-							<li data-area="login" id="menu_login" class="entrar"><a href="/login" class="bt_login_header_menu"><span class="entrar">Entrar</span><span class="cadastrar">Cadastrar</span></a></li>
-						</ul>
-					</nav>
-				</header>
-				
-				<button id="bt_a2hs" title="Acesse o Tricolor Paulista de forma mais rápida com o nosso App">Baixe o APP do Tricolor Paulista</button>
-			</div> 
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="forum.html">Fórum</a></li>
+            <li><a href="classificacao.html">Classificação</a></li>
+            <li><a href="calendario.html">Calendário</a></li>
+        </ul>
+    </nav>
 
-			<!-- Todas as ocorrências de "Corinthians" substituídas por "São Paulo" -->
-			<!-- Todas as ocorrências de "Meu Timão" substituídas por "Tricolor Paulista" -->
-			
-			<!-- Exemplo de substituição em artigos: -->
-			<article>
-				<h2><a href="/noticias-do-sao-paulo/507838/sao-paulo-divulga-lista-de-relacionados-com-tres-ausencias-e-uma-novidade-contra-o-racing">São Paulo divulga lista de relacionados com três ausências e uma novidade contra o Racing</a></h2>
-			</article>
-			
-			<!-- Seções de classificação e jogos atualizadas -->
-			<section id="area_jogos" class="container">
-				<h3 class="tit_area"><a href="/jogos/">Jogos do São Paulo</a></h3>
-				<!-- Conteúdo mantido com substituições -->
-			</section>
-			
-			<!-- Rodapé atualizado -->
-			<footer id="footer">
-				<div class="links_principais">
-					<ul>
-						<li><a href="/noticias-do-sao-paulo">Notícias</a></li>
-						<li><a href="/historia-do-sao-paulo/">História do São Paulo</a></li>
-						<!-- Outros links atualizados -->
-					</ul>
-				</div>
-			</footer>
-		</div>
-	</body>
+    <main>
+        <section class="destaque">
+            <h2>Notícia em Destaque</h2>
+            <article class="card">
+                <img src="destaque.jpg" alt="Notícia destaque" class="hover-zoom">
+                <div class="card-content">
+                    <h3>São Paulo vence clássico e assume liderança</h3>
+                    <p>Em jogo emocionante, Tricolor supera rival e segue firme no campeonato...</p>
+                    <a href="#" class="btn">Leia mais</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="ultimas-noticias">
+            <h2>Últimas Notícias</h2>
+            <div class="news-grid">
+                <!-- Notícias serão carregadas via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Tricolor Paulista - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
