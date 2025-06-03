@@ -172,3 +172,169 @@ function initForum() {
 
 // Inicializar o fórum quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', initForum);
+
+// Inicialização do Fórum
+function initForum() {
+    // Efeito Parallax no Header
+    const forumHeader = document.querySelector('.forum-header');
+    window.addEventListener('scroll', function() {
+        if (forumHeader) {
+            const scrollPosition = window.pageYOffset;
+            forumHeader.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        }
+    });
+
+    // Sistema de Likes
+    document.querySelectorAll('.like-btn, .dislike-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isLike = this.classList.contains('like-btn');
+            const countElement = this.querySelector('.count');
+            let count = parseInt(countElement.textContent);
+            
+            // Remove active class from both buttons
+            const container = this.closest('.like-system');
+            container.querySelector('.like-btn').classList.remove('active');
+            container.querySelector('.dislike-btn').classList.remove('active');
+            
+            // Toggle active class
+            if (!this.classList.contains('active')) {
+                this.classList.add('active');
+                countElement.textContent = count + 1;
+                
+                // Animação
+                this.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 300);
+            } else {
+                countElement.textContent = count - 1;
+            }
+        });
+    });
+
+    // Troca de Abas
+    const tabButtons = document.querySelectorAll('.forum-tabs li');
+    const tabContents = document.querySelectorAll('.topicos-lista');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active-tab'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Show corresponding content
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId + '-tab').classList.add('active-tab');
+            
+            // Efeito de transição
+            this.style.transform = 'translateY(-3px)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(0)';
+            }, 200);
+        });
+    });
+
+    // Efeito de Partículas
+    createParticles();
+}
+
+// Criar partículas dinâmicas
+function createParticles() {
+    const container = document.querySelector('.particles-background');
+    if (!container) return;
+    
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Posição aleatória
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        
+        // Tamanho aleatório
+        const size = Math.random() * 5 + 2;
+        
+        // Duração da animação
+        const duration = Math.random() * 20 + 10;
+        
+        // Atraso inicial
+        const delay = Math.random() * 5;
+        
+        // Cor (vermelho, preto ou branco)
+        const colors = ['#FF0000', '#000000', '#FFFFFF'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Opacidade
+        const opacity = Math.random() * 0.5 + 0.1;
+        
+        // Aplicar estilos
+        particle.style.cssText = `
+            position: absolute;
+            top: ${posY}%;
+            left: ${posX}%;
+            width: ${size}px;
+            height: ${size}px;
+            background: ${color};
+            border-radius: 50%;
+            opacity: ${opacity};
+            animation: floatParticle ${duration}s linear infinite ${delay}s;
+            pointer-events: none;
+        `;
+        
+        container.appendChild(particle);
+    }
+    
+    // Adicionar animação de flutuação
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: ${Math.random() * 0.5 + 0.1};
+            }
+            25% {
+                transform: translateY(-20vh) translateX(10px);
+            }
+            50% {
+                transform: translateY(-40vh) translateX(20px);
+                opacity: ${Math.random() * 0.7 + 0.1};
+            }
+            75% {
+                transform: translateY(-60vh) translateX(10px);
+            }
+            100% {
+                transform: translateY(-80vh) translateX(0);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Inicializar quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', function() {
+    initForum();
+    
+    // Efeito de digitação no título (opcional)
+    const forumTitle = document.querySelector('.forum-header h2');
+    if (forumTitle) {
+        const originalText = forumTitle.textContent;
+        forumTitle.textContent = '';
+        
+        let i = 0;
+        const typingEffect = setInterval(() => {
+            if (i < originalText.length) {
+                forumTitle.textContent += originalText.charAt(i);
+                i++;
+            } else {
+                clearInterval(typingEffect);
+            }
+        }, 100);
+    }
+});
