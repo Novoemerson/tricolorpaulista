@@ -4,51 +4,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tricolor Paulista - Tudo sobre o São Paulo FC</title>
+    <meta name="description" content="Notícias do São Paulo FC, próximos jogos e resultados. Tudo sobre o Tricolor Paulista você encontra aqui">
+    <meta name="keywords" content="São Paulo, São Paulo FC, SPFC, Notícias do São Paulo, Tricolor Paulista">
+    
+    <!-- Favicon e ícones -->
+    <link rel="shortcut icon" href="assets/icons/logo-icon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#FF0000">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="src/styles.css">
 </head>
-<body>
-    <header class="parallax">
-        <div class="header-content">
+<body class="home">
+    <!-- Barra de navegação -->
+    <nav id="main-nav">
+        <div class="container">
+            <div class="nav-header">
+                <a href="/" class="logo">
+                    <img src="assets/logo.png" alt="Tricolor Paulista" width="180">
+                </a>
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <img src="assets/icons/menu.svg" alt="Menu">
+                </button>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="/" class="active"><img src="assets/icons/news.svg" alt=""> Notícias</a></li>
+                <li><a href="/forum"><img src="assets/icons/forum.svg" alt=""> Fórum</a></li>
+                <li><a href="/videos"><img src="assets/icons/videos.svg" alt=""> Vídeos</a></li>
+                <li><a href="/jogos"><img src="assets/icons/calendar.svg" alt=""> Jogos</a></li>
+                <li><a href="/classificacao"><img src="assets/icons/stats.svg" alt=""> Classificação</a></li>
+                <li><a href="/contato"><img src="assets/icons/contact.svg" alt=""> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner principal -->
+    <header class="hero-banner parallax">
+        <div class="container">
             <h1>Tricolor Paulista</h1>
             <p>Tudo sobre o São Paulo Futebol Clube</p>
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="noticias.html">Notícias</a></li>
-            <li><a href="forum.html">Fórum</a></li>
-            <li><a href="classificacao.html">Classificação</a></li>
-            <li><a href="calendario.html">Calendário</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="destaque">
-            <h2>Notícia em Destaque</h2>
-            <article class="card">
-                <img src="destaque.jpg" alt="Notícia destaque" class="hover-zoom">
-                <div class="card-content">
-                    <h3>São Paulo vence clássico e assume liderança</h3>
-                    <p>Em jogo emocionante, Tricolor supera rival e segue firme no campeonato...</p>
-                    <a href="#" class="btn">Leia mais</a>
+    <!-- Conteúdo principal -->
+    <main class="container">
+        <!-- Destaque principal -->
+        <section class="featured-news">
+            <article class="main-feature">
+                <figure>
+                    <img src="https://via.placeholder.com/800x450" alt="Destaque do São Paulo" class="hover-zoom">
+                    <span class="news-category">Destaque</span>
+                </figure>
+                <div class="news-content">
+                    <h2>São Paulo vence clássico e assume liderança do campeonato</h2>
+                    <p>Em jogo emocionante, Tricolor supera rival e segue firme na busca pelo título...</p>
+                    <div class="news-meta">
+                        <span class="views">4.2k visualizações</span>
+                        <span class="comments">127 comentários</span>
+                    </div>
+                    <a href="#" class="btn">Ler mais</a>
                 </div>
             </article>
         </section>
 
-        <section class="ultimas-noticias">
-            <h2>Últimas Notícias</h2>
-            <div class="news-grid">
-                <!-- Notícias serão carregadas via JavaScript -->
+        <!-- Grid de notícias -->
+        <section class="news-grid">
+            <h2 class="section-title">Últimas Notícias</h2>
+            
+            <div class="grid-container">
+                <article class="news-card">
+                    <figure>
+                        <img src="https://via.placeholder.com/400x225" alt="Notícia 1" class="hover-zoom">
+                        <span class="news-category">Elenco</span>
+                    </figure>
+                    <div class="card-content">
+                        <h3>São Paulo relaciona jogadores para jogo decisivo</h3>
+                        <p>Veja a lista completa dos relacionados pelo técnico para o próximo confronto...</p>
+                        <div class="news-meta">
+                            <span>15h30</span>
+                            <span>42 comentários</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <figure>
+                        <img src="https://via.placeholder.com/400x225" alt="Notícia 2" class="hover-zoom">
+                        <span class="news-category">Entrevista</span>
+                    </figure>
+                    <div class="card-content">
+                        <h3>Zagueiro fala sobre preparação para o clássico</h3>
+                        <p>"Estamos focados e preparados", diz jogador em entrevista exclusiva...</p>
+                        <div class="news-meta">
+                            <span>14h15</span>
+                            <span>28 comentários</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <figure>
+                        <img src="https://via.placeholder.com/400x225" alt="Notícia 3" class="hover-zoom">
+                        <span class="news-category">Base</span>
+                    </figure>
+                    <div class="card-content">
+                        <h3>Promessa da base renova contrato com o clube</h3>
+                        <p>Jovem talento assina novo vínculo e projeta futuro no Morumbi...</p>
+                        <div class="news-meta">
+                            <span>12h45</span>
+                            <span>35 comentários</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <a href="/noticias" class="see-all">Ver todas as notícias →</a>
+        </section>
+
+        <!-- Fórum - Tópicos populares -->
+        <section class="forum-section">
+            <h2 class="section-title">Fórum Tricolor</h2>
+            <div class="forum-container">
+                <article class="forum-topic">
+                    <div class="topic-stats">
+                        <span class="replies">85 respostas</span>
+                        <span class="views">2.1k visualizações</span>
+                    </div>
+                    <h3><a href="#">Análise tática do último jogo</a></h3>
+                    <p>Discussão sobre o esquema tático utilizado pelo técnico na última partida...</p>
+                    <div class="topic-meta">
+                        <span>Por: TricolorFan</span>
+                        <span>Última resposta: 15 minutos atrás</span>
+                    </div>
+                </article>
+
+                <article class="forum-topic">
+                    <div class="topic-stats">
+                        <span class="replies">42 respostas</span>
+                        <span class="views">1.5k visualizações</span>
+                    </div>
+                    <h3><a href="#">Quem deve ser o próximo reforço?</a></h3>
+                    <p>Debate sobre as possíveis contratações para o time na próxima janela...</p>
+                    <div class="topic-meta">
+                        <span>Por: SPFC_1970</span>
+                        <span>Última resposta: 1 hora atrás</span>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="forum-actions">
+                <a href="/forum/novo-topico" class="btn">Criar novo tópico</a>
+                <a href="/forum" class="see-all">Ver todos os tópicos →</a>
+            </div>
+        </section>
+
+        <!-- Classificação e Jogos -->
+        <section class="stats-section">
+            <div class="standings">
+                <h2 class="section-title">Classificação - Brasileirão</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Time</th>
+                                <th>Pts</th>
+                                <th>PJ</th>
+                                <th>VIT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>São Paulo</td>
+                                <td>18</td>
+                                <td>8</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Palmeiras</td>
+                                <td>17</td>
+                                <td>8</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Flamengo</td>
+                                <td>16</td>
+                                <td>8</td>
+                                <td>5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/classificacao" class="see-all">Ver classificação completa →</a>
+            </div>
+
+            <div class="matches">
+                <h2 class="section-title">Próximos Jogos</h2>
+                <div class="matches-container">
+                    <article class="match-card">
+                        <div class="match-date">
+                            <span class="day">15</span>
+                            <span class="month">MAI</span>
+                        </div>
+                        <div class="match-info">
+                            <p class="competition">Brasileirão Série A</p>
+                            <div class="teams">
+                                <span class="team home">SPFC</span>
+                                <span class="vs">X</span>
+                                <span class="team away">Flamengo</span>
+                            </div>
+                            <p class="match-time">21:00 - Morumbi</p>
+                        </div>
+                    </article>
+
+                    <article class="match-card">
+                        <div class="match-date">
+                            <span class="day">19</span>
+                            <span class="month">MAI</span>
+                        </div>
+                        <div class="match-info">
+                            <p class="competition">Libertadores</p>
+                            <div class="teams">
+                                <span class="team home">Boca Juniors</span>
+                                <span class="vs">X</span>
+                                <span class="team away">SPFC</span>
+                            </div>
+                            <p class="match-time">21:30 - La Bombonera</p>
+                        </div>
+                    </article>
+                </div>
+                <a href="/jogos" class="see-all">Ver calendário completo →</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Tricolor Paulista - Todos os direitos reservados</p>
+    <!-- Rodapé -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Tricolor Paulista" width="150">
+                <p>Tudo sobre o São Paulo Futebol Clube</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="links-column">
+                    <h3>Notícias</h3>
+                    <ul>
+                        <li><a href="#">Últimas notícias</a></li>
+                        <li><a href="#">Elenco profissional</a></li>
+                        <li><a href="#">São Paulo Feminino</a></li>
+                        <li><a href="#">Categorias de base</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-column">
+                    <h3>Jogos</h3>
+                    <ul>
+                        <li><a href="#">Próximos jogos</a></li>
+                        <li><a href="#">Resultados</a></li>
+                        <li><a href="#">Estatísticas</a></li>
+                        <li><a href="#">Ingressos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-column">
+                    <h3>Clube</h3>
+                    <ul>
+                        <li><a href="#">História</a></li>
+                        <li><a href="#">Títulos</a></li>
+                        <li><a href="#">Ídolos</a></li>
+                        <li><a href="#">Morumbi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-column">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+                        <a href="#"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+                        <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="assets/icons/youtube.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Tricolor Paulista - Todos os direitos reservados</p>
+                <p>Este não é o site oficial do São Paulo Futebol Clube</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="src/script.js"></script>
 </body>
 </html>
