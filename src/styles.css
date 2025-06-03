@@ -1750,3 +1750,107 @@ body::after {
         margin-bottom: 15px;
     }
 }
+
+/* ========================================== */
+/* LAYUT ORIGINAL DO DESKTOP (RESTAURADO) */
+/* ========================================== */
+
+.forum-section {
+    margin: 60px 0;
+}
+
+.forum-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.forum-topic {
+    background-color: var(--spfc-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================== */
+/* LAYOUT MOBILE (NOVO) - ESTILO MEUTIMÃO */
+/* ========================================== */
+
+@media (max-width: 768px) {
+    /* Reset completo do layout desktop */
+    .forum-container {
+        display: block !important;
+    }
+    
+    /* Container principal */
+    #forum-tricolor {
+        padding: 0 10px;
+    }
+    
+    /* Tópicos fixados */
+    #topicos-fixados {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    /* Lista de tópicos - estilo vertical */
+    .topicos-lista {
+        display: block !important;
+    }
+    
+    .topico-item {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 15px;
+        padding: 15px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    /* Estrutura vertical */
+    .topico-avatar {
+        display: none; /* Ocultamos no mobile para mais espaço */
+    }
+    
+    .topico-main h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .topico-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 10px;
+        font-size: 0.8rem;
+        color: #666;
+    }
+    
+    .topico-stats {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: #888;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+    
+    /* Abas de navegação */
+    .forum-tabs ul {
+        display: flex;
+        overflow-x: auto;
+        padding: 0 10px 10px;
+        margin: 0 -10px 15px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .forum-tabs li {
+        flex-shrink: 0;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+}
