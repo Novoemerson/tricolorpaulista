@@ -434,27 +434,30 @@
     <script src="src/script.js"></script>
 
 <script>
-// Verifica se é mobile e aplica classes específicas
-function adjustForumLayout() {
+// Função para forçar o layout correto
+function enforceLayout() {
     const isMobile = window.innerWidth <= 768;
-    document.body.classList.toggle('mobile-view', isMobile);
-    document.body.classList.toggle('desktop-view', !isMobile);
     
     if (isMobile) {
-        console.log('Aplicando layout mobile');
-        // Garante que os containers principais estão em bloco
+        // Garante que os containers estão em bloco
         document.querySelectorAll('.forum-container, .topicos-lista').forEach(el => {
             el.style.display = 'block';
+        });
+        
+        // Remove qualquer estilo inline que possa estar sobrescrevendo
+        document.querySelectorAll('.topico-item').forEach(el => {
+            el.style.display = 'block !important';
+            el.style.width = '100% !important';
         });
     }
 }
 
-// Executa ao carregar e redimensionar
-window.addEventListener('load', adjustForumLayout);
-window.addEventListener('resize', adjustForumLayout);
+// Executa quando a página carrega e quando redimensiona
+window.addEventListener('load', enforceLayout);
+window.addEventListener('resize', enforceLayout);
 
 // Debug
-console.log('Forum Layout Adjuster loaded');
+console.log('Layout Enforcer: Mobile mode is', window.innerWidth <= 768);
 </script>
     
 </body>
