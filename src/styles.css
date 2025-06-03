@@ -1,71 +1,87 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Estilos base */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #333;
 }
 
-:root {
-  /* Cores oficiais do São Paulo FC */
-  --spfc-red: 349 100% 38%;       /* #C10016 - Vermelho (paixão) */
-  --spfc-white: 0 0% 100%;        /* #FFFFFF - Branco (pureza) */
-  --spfc-black: 0 0% 0%;          /* #000000 - Preto (elegância) */
-
-  --background: var(--spfc-white);
-  --foreground: var(--spfc-black);
-  --card: var(--spfc-white);
-  --card-foreground: var(--spfc-black);
-  --popover: var(--spfc-white);
-  --popover-foreground: var(--spfc-black);
-  /* CORES PRINCIPAIS */
-  --primary: var(--spfc-red);     
-  --primary-foreground: var(--spfc-white);
-  --secondary: var(--spfc-black);
-  --secondary-foreground: var(--spfc-white);
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: var(--spfc-red);
-  --accent-foreground: var(--spfc-white);
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: var(--spfc-white);
-  --border: var(--spfc-red);
-  --input: var(--spfc-red);
-  --ring: var(--spfc-red);
-  --radius: 0.5rem;
-  /* Paleta para gráficos (mantém vermelho + tons neutros) */
-  --chart-1: 349 100% 38%;       /* Vermelho SPFC */
-  --chart-2: 0 0% 90%;            /* Cinza claro */
-  --chart-3: 0 0% 50%;            /* Cinza médio */
-  --chart-4: 0 0% 20%;            /* Cinza escuro */
-  --chart-5: 0 0% 0%;             /* Preto */
+/* Efeito Parallax */
+.parallax {
+    background-image: url('spfc-bg.jpg');
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-.dark {
-  /* Modo escuro com ênfase no preto e detalhes vermelhos */
-  --background: var(--spfc-black); 
-  --foreground: var(--spfc-white);
-  --card: var(--spfc-black);
-  --card-foreground: var(--spfc-white);
-  --popover: var(--spfc-black);
-  --popover-foreground: var(--spfc-white);
-  --primary: var(--spfc-red);
-  --primary-foreground: var(--spfc-white);
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: var(--spfc-white);
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: var(--spfc-red);
-  --accent-foreground: var(--spfc-white);
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: var(--spfc-white);
-  --border: var(--spfc-red);
-  --input: var(--spfc-red);
-  --ring: var(--spfc-red);
-  /* Gráficos em modo escuro */
-  --chart-1: 349 100% 45%;        /* Vermelho mais vibrante */
-  --chart-2: 0 0% 70%;            /* Cinza claro */
-  --chart-3: 0 0% 40%;            /* Cinza médio */
-  --chart-4: 0 0% 20%;            /* Cinza escuro */
-  --chart-5: 0 0% 100%;           /* Branco */
+.header-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Microinterações */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FF0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #CC0000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effects */
+.hover-zoom {
+    transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Background dinâmico */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FF0000, #000000, #FFFFFF);
+    opacity: 0.1;
+    z-index: -1;
+    animation: gradientBG 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
