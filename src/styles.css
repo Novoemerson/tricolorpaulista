@@ -328,8 +328,9 @@ img {
 }
 
 .forum-topic h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 10px;
+    white-space: normal;
 }
 
 .forum-topic p {
@@ -378,7 +379,8 @@ img {
     }
     
     .forum-topic h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        white-space: normal;
     }
 }
 }
