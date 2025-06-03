@@ -127,41 +127,128 @@
         </section>
 
         <!-- Fórum - Tópicos populares -->
-        <section class="forum-section">
-            <h2 class="section-title">Fórum Tricolor</h2>
-            <div class="forum-container">
-                <article class="forum-topic">
-                    <div class="topic-stats">
-                        <span class="replies">85 respostas</span>
-                        <span class="views">2.1k visualizações</span>
-                    </div>
-                    <h3><a href="#">Análise tática do último jogo</a></h3>
-                    <p>Discussão sobre o esquema tático utilizado pelo técnico na última partida...</p>
-                    <div class="topic-meta">
-                        <span>Por: TricolorFan</span>
-                        <span>Última resposta: 15 minutos atrás</span>
-                    </div>
-                </article>
-
-                <article class="forum-topic">
-                    <div class="topic-stats">
-                        <span class="replies">42 respostas</span>
-                        <span class="views">1.5k visualizações</span>
-                    </div>
-                    <h3><a href="#">Quem deve ser o próximo reforço?</a></h3>
-                    <p>Debate sobre as possíveis contratações para o time na próxima janela...</p>
-                    <div class="topic-meta">
-                        <span>Por: SPFC_1970</span>
-                        <span>Última resposta: 1 hora atrás</span>
-                    </div>
-                </article>
+        
+        <!-- Adicione isso no seu HTML, substituindo a seção do fórum existente -->
+<section id="forum-tricolor" class="container">
+    <h2 class="section-title">Fórum Tricolor</h2>
+    
+    <!-- Tópicos Fixados -->
+    <div id="topicos-fixados" class="clearfix">
+        <article class="topico-fixado">
+            <div class="interacoes">
+                <div class="likes-internos" data-idlikeitem="25974707" data-idconteudo="23785597" data-nick="malu" data-tipo="2" data-verificado="true">
+                    <a href="#" class="bt-like-interno like-interno">gostei <span>75</span></a>
+                    <a href="#" class="bt-like-interno dislike-interno">não gostei <span>1</span></a>
+                </div>
             </div>
             
-            <div class="forum-actions">
-                <a href="/forum/novo-topico" class="btn">Criar novo tópico</a>
-                <a href="/forum" class="see-all">Ver todos os tópicos →</a>
+            <figure>
+                <a href="/forum-do-spfc/1893451/primeiro-classico-da-historia-na-libertadores">
+                    <img src="assets/forum/libertadores-classico.jpg" loading="lazy" alt="Primeiro Clássico da história na Libertadores" width="210" height="210">
+                </a>
+            </figure>
+            
+            <div class="dados-forum">
+                <p class="respostas">89 <span>respostas</span></p>
+                <p class="views">3.210 <span>visitas</span></p>
             </div>
-        </section>
+            
+            <h3>
+                <a href="/forum-do-spfc/1893451/primeiro-classico-da-historia-na-libertadores">
+                    Primeiro Clássico da história na Libertadores
+                </a>
+            </h3>
+        </article>
+
+        <article class="topico-fixado">
+            <div class="interacoes">
+                <div class="likes-internos" data-idlikeitem="25973827" data-idconteudo="23784982" data-nick="tricolorpaulista" data-tipo="2" data-verificado="true">
+                    <a href="#" class="bt-like-interno like-interno">gostei <span>92</span></a>
+                    <a href="#" class="bt-like-interno dislike-interno">não gostei <span>5</span></a>
+                </div>
+            </div>
+            
+            <figure>
+                <a href="/forum-do-spfc/1893374/spfc-x-palmeiras-tudo-pode-acontecer">
+                    <img src="assets/forum/spfc-palmeiras.jpg" loading="lazy" alt="SPFC x Palmeiras - Tudo pode acontecer" width="210" height="210">
+                </a>
+            </figure>
+            
+            <div class="dados-forum">
+                <p class="respostas">124 <span>respostas</span></p>
+                <p class="views">4.730 <span>visitas</span></p>
+            </div>
+            
+            <h3>
+                <a href="/forum-do-spfc/1893374/spfc-x-palmeiras-tudo-pode-acontecer">
+                    SPFC x Palmeiras - Tudo pode acontecer
+                </a>
+            </h3>
+        </article>
+    </div>
+    
+    <!-- Abas do Fórum -->
+    <div class="forum-tabs">
+        <ul class="abas-forum">
+            <li class="ativo"><a href="#" data-aba="topicos-populares">Tópicos populares</a></li>
+            <li><a href="#" data-aba="topicos-recentes">Recentes</a></li>
+            <li><a href="#" data-aba="meus-topicos">Meus tópicos</a></li>
+        </ul>
+        
+        <div class="conteudo-abas">
+            <!-- Tópicos Populares -->
+            <div id="topicos-populares" class="aba-forum ativa">
+                <ul class="lista-topicos">
+                    <li class="topico-lista primeira-linha" data-iduser="20965">
+                        <div class="container-topico">
+                            <div class="dados-topico">
+                                <p class="respostas"><a href="#">42 <span>respostas</span></a></p>
+                                <p class="views"><a href="#">1.853 <span>visitas</span></a></p>
+                            </div>
+                            <p class="data-topico">
+                                <a href="#">Última resposta: 12 minutos</a>
+                            </p>
+                            <span class="usuario-verificado" data-iduser="20965">
+                                <img class="avatar" src="assets/forum/avatar1.jpg" alt="Avatar de TricolorFan" width="34" height="34">
+                            </span>
+                            <h4><a href="#">Calleri deve ser titular contra o Flamengo?</a></h4>
+                            <a href="#" class="link-topico" title="Calleri deve ser titular contra o Flamengo?">
+                                Discussão sobre o atacante argentino que vem se destacando...
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="topico-lista primeira-linha" data-iduser="596999">
+                        <div class="container-topico">
+                            <div class="dados-topico">
+                                <p class="respostas"><a href="#">37 <span>respostas</span></a></p>
+                                <p class="views"><a href="#">1.420 <span>visitas</span></a></p>
+                            </div>
+                            <p class="data-topico">
+                                <a href="#">Última resposta: 27 minutos</a>
+                            </p>
+                            <span class="usuario-verificado" data-iduser="596999">
+                                <img class="avatar" src="assets/forum/avatar2.jpg" alt="Avatar de SPFC_1970" width="34" height="34">
+                            </span>
+                            <h4><a href="#">Análise tática: como o SPFC deve jogar contra o River?</a></h4>
+                            <a href="#" class="link-topico" title="Análise tática: como o SPFC deve jogar contra o River?">
+                                Discussão sobre o esquema tático ideal para o confronto...
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Outras abas ficariam aqui -->
+        </div>
+    </div>
+    
+    <!-- Links do Fórum -->
+    <div class="forum-acoes">
+        <a href="/forum/novo-topico" class="btn-criar-topico">+ Criar novo tópico</a>
+        <a href="/forum" class="btn-ver-todos">Ver todos os tópicos →</a>
+    </div>
+</section>
 
         <!-- Classificação e Jogos -->
         <section class="stats-section">
