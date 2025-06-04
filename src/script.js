@@ -132,31 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Funções específicas para o Fórum
-function initForum() {
-    // ADICIONE ESTA VERIFICAÇÃO
-    if (isMobileDevice()) {
-        console.log("Executando versão mobile do fórum");
-        // Comportamentos específicos para mobile
-        document.body.classList.add('mobile-view');
-        return; // Sai da função para não executar os comportamentos de desktop
-    }
-
-    console.log("Executando versão desktop do fórum");
-    // Restante do código original da initForum()...
-    // Efeito Parallax no Header
-    const forumHeader = document.querySelector('.forum-header');
-    // ... manter o resto do código original ...
-}            
-            // Remove classe ativa de todas as abas
-            abas.forEach(a => a.parentElement.classList.remove('ativo'));
-            conteudoAbas.forEach(c => c.classList.remove('ativa'));
-            
-            // Adiciona classe ativa na aba clicada
-            this.parentElement.classList.add('ativo');
-            const abaAlvo = this.getAttribute('data-aba');
-            document.getElementById(abaAlvo).classList.add('ativa');
-        });
-    });
     
     // Sistema de likes
     const botoesLike = document.querySelectorAll('.bt-like-interno');
@@ -267,3 +242,56 @@ function restoreLayout() {
 
 window.addEventListener('resize', restoreLayout);
 restoreLayout(); // Executa ao carregar
+
+/* ============= [INÍCIO DA NOVA FUNCIONALIDADE] ============= */
+
+// Menu Mobile (se já não existir)
+if (!document.querySelector('.menu-toggle').hasEventListener) {
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav-menu').classList.toggle('active');
+    });
+    document.querySelector('.menu-toggle').hasEventListener = true;
+}
+
+// Controle do Layout do Fórum
+function setupForumLayout() {
+    const forumSections = {
+        desktop: () => {
+            document.querySelectorAll('.topicos-lista').forEach(el => {
+                el.style.display = 'grid';
+                el.style.gridTemplateColumns = 'repeat(auto-fill, minmax(450px, 1fr))';
+            });
+            console.log('Layout DESKTOP ativado');
+        },
+        mobile: () => {
+            document.querySelectorAll('.topicos-lista').forEach(el => {
+                el.style.display = 'block';
+            });
+            console.log('Layout MOBILE ativado');
+        }
+    };
+
+    const checkLayout = () => {
+        const isMobile = window.innerWidth <= 768;
+        isMobile ? forumSections.mobile() : forumSections.desktop();
+    };
+
+    // Configuração inicial
+    checkLayout();
+    
+    // Atualiza ao redimensionar (com debounce para performance)
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(checkLayout, 100);
+    });
+}
+
+// Inicializa quando o DOM estiver pronto
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupForumLayout);
+} else {
+    setupForumLayout();
+}
+
+/* ============= [FIM DA NOVA FUNCIONALIDADE] ============= */
