@@ -459,6 +459,28 @@ window.addEventListener('resize', enforceLayout);
 // Debug
 console.log('Layout Enforcer: Mobile mode is', window.innerWidth <= 768);
 </script>
+
+    <!-- GSAP para microinterações avançadas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script>
+  // Microinteração avançada nos cards
+  gsap.utils.toArray(".news-card").forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      gsap.to(card, { 
+        y: -5, 
+        duration: 0.3,
+        boxShadow: "0 10px 20px rgba(0,0,0,0.1)"
+      });
+    });
+    card.addEventListener("mouseleave", () => {
+      gsap.to(card, { 
+        y: 0,
+        duration: 0.3,
+        boxShadow: "0 2px 5px rgba(0,0,0,0.05)"
+      });
+    });
+  });
+</script>
     
 </body>
 </html>
