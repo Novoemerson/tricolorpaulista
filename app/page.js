@@ -83,7 +83,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 w-full bg-white shadow z-20">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <Image src="/spfc-logo.png" width={48} height={48} alt="SPFC" className="rounded" />
+            <Image src="/spfc-logo.png" width={100} height={100} alt="SPFC" className="rounded" />
             <span className="text-2xl font-extrabold text-red-700 leading-tight">Tricolor<br/>Paulista</span>
           </div>
  
