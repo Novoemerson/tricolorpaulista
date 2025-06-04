@@ -1992,3 +1992,117 @@ body::after {
         -webkit-overflow-scrolling: touch;
     }
 }
+
+/* ============ [CORREÇÕES GERAIS] ============ */
+/* Reset para garantir consistência */
+.stats-section, 
+.forum-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ============ [CLASSIFICAÇÃO E JOGOS - DESKTOP] ============ */
+.stats-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* ============ [FÓRUM DESKTOP - LAYOUT ORIGINAL] ============ */
+.topicos-lista.active-tab {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+}
+
+.topico-item {
+    display: grid !important;
+    grid-template-columns: 60px 1fr 100px;
+    grid-template-areas: 
+        "avatar title stats"
+        "avatar meta stats"
+        "avatar last last";
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.topico-avatar {
+    grid-area: avatar;
+    align-self: center;
+}
+
+.topico-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #eee;
+}
+
+.topico-main {
+    grid-area: title;
+}
+
+.topico-meta {
+    grid-area: meta;
+    display: flex;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.topico-stats {
+    grid-area: stats;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+}
+
+.topico-last {
+    grid-area: last;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+/* ============ [VERSÃO MOBILE] ============ */
+@media (max-width: 768px) {
+    /* Classificação e Jogos */
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Fórum Mobile */
+    .topicos-lista.active-tab {
+        display: block !important;
+    }
+    
+    .topico-item {
+        display: flex !important;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    
+    .topico-avatar {
+        display: none;
+    }
+    
+    .topico-stats {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+    
+    .topico-last {
+        margin-top: 8px;
+    }
+}
