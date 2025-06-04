@@ -164,10 +164,6 @@ export default function Home() {
         </div>
       </section>
 
-     // ...acima, mantenha seu site como está!
-
-// Adicione isso abaixo do conteúdo principal:
-
 <section className="bg-gray-50 py-10 mt-16 border-t border-gray-200">
   <div className="max-w-6xl mx-auto px-4">
     {/* Título do fórum */}
