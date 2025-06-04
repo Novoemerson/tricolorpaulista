@@ -1,25 +1,38 @@
-// ADICIONE ESTA FUNÇÃO NO INÍCIO DO ARQUIVO
-function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || 
-           (navigator.userAgent.indexOf('IEMobile') !== -1) ||
-           (window.innerWidth <= 768);
+// Menu Mobile
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+});
+
+// Controle Responsivo do Fórum
+function updateLayout() {
+    const isMobile = window.innerWidth <= 768;
+    
+    // Ativa/desativa classes
+    document.body.classList.toggle('mobile-view', isMobile);
+    document.body.classList.toggle('desktop-view', !isMobile);
+    
+    // Debug
+    console.log(`Layout: ${isMobile ? 'MOBILE' : 'DESKTOP'}`);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Menu mobile (mantenha este)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    menuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-    });
+// Inicialização
+window.addEventListener('load', updateLayout);
+window.addEventListener('resize', updateLayout);
 
-    // ADICIONE ESTA VERIFICAÇÃO
-    if (isMobileDevice()) {
-        // Comportamentos específicos para mobile
-        document.querySelectorAll('.forum-container').forEach(el => {
-            el.style.display = 'block';
-        });
+// Efeitos Visuais (opcional)
+document.querySelectorAll('.topico-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        if (!document.body.classList.contains('mobile-view')) {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        }
+    });
+    
+    item.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        this.style.boxShadow = '';
+    });
+});
     }
 
     // Restante do seu código original...
