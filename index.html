@@ -481,6 +481,36 @@ console.log('Layout Enforcer: Mobile mode is', window.innerWidth <= 768);
     });
   });
 </script>
+
+<!-- GSAP para animações avançadas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+<script>
+  // 1. Microinterações nos cards
+  document.querySelectorAll('.news-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, { 
+        y: -5, 
+        duration: 0.3,
+        boxShadow: "0 10px 20px rgba(0,0,0,0.15)"
+      });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { 
+        y: 0,
+        duration: 0.3,
+        boxShadow: "0 2px 5px rgba(0,0,0,0.1)"
+      });
+    });
+  });
+
+  // 2. Parallax no header
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('#header');
+    const scrollY = window.pageYOffset;
+    header.style.backgroundPositionY = `-${scrollY * 0.5}px`;
+  });
+</script>    
     
 </body>
 </html>
