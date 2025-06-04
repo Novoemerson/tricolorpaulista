@@ -86,18 +86,7 @@ export default function Home() {
             <Image src="/spfc-logo.png" width={48} height={48} alt="SPFC" className="rounded" />
             <span className="text-2xl font-extrabold text-red-700 leading-tight">Tricolor<br/>Paulista</span>
           </div>
-          <nav>
-            <ul className="flex flex-wrap gap-6 text-lg font-bold">
-              <li><a href="#" className="hover:text-red-700 transition-colors">Notícias</a></li>
-              <li><a href="#" className="hover:text-red-700 transition-colors">Fórum</a></li>
-              <li><a href="#" className="hover:text-red-700 transition-colors">Vídeos</a></li>
-              <li><a href="#" className="hover:text-red-700 transition-colors">Jogos</a></li>
-              <li><a href="#" className="hover:text-red-700 transition-colors">Colunas</a></li>
-              <li><a href="#" className="hover:text-red-700 transition-colors">Classificação</a></li>
-              <li><a href="#" className="hover:text-red-700 transition-colors">Apostas</a></li>
-              <li><a href="#" className="hover:text-red-700 transition-colors">Mais+</a></li>
-            </ul>
-          </nav>
+ 
         </div>
       </header>
 
