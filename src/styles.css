@@ -2106,3 +2106,134 @@ body::after {
         margin-top: 8px;
     }
 }
+
+/* ============ [CORREÇÕES DO FÓRUM] ============ */
+
+/* Container principal */
+#forum-tricolor {
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+/* Tópicos fixados - Carrossel */
+#topicos-fixados {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0 20px;
+    margin: 0 -10px 30px;
+    scroll-snap-type: x mandatory;
+}
+
+.topico-fixado {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Lista de tópicos - Desktop */
+.topicos-lista.active-tab {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.topico-item {
+    display: grid;
+    grid-template-columns: 50px 1fr 100px;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.topico-avatar {
+    grid-row: span 2;
+    align-self: center;
+}
+
+.topico-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+    transition: transform 0.3s;
+}
+
+.topico-avatar img:hover {
+    transform: scale(1.1);
+}
+
+.topico-main h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.topico-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.topico-stats {
+    grid-column: 3;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.topico-last {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ============ [MOBILE] ============ */
+@media (max-width: 768px) {
+    #forum-tricolor {
+        padding: 15px;
+    }
+    
+    .topico-item {
+        display: flex !important;
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .topico-avatar {
+        display: none;
+    }
+    
+    .topico-stats {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+    
+    .topico-last {
+        margin-top: 8px;
+    }
+    
+    /* Abas de navegação */
+    .forum-tabs ul {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+}
