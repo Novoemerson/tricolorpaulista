@@ -249,3 +249,69 @@ body {
   background: var(--primary);
   color: white;
 }
+
+/* === CORE ESTILO MEUTIMÃO === */
+:root {
+  --primary: hsl(349, 100%, 38%); /* #C10016 */
+  --primary-hover: hsl(349, 100%, 30%);
+  --dark: #1a1a1a;
+  --text: #333;
+}
+
+/* === ESTRUTURA PRINCIPAL === */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+}
+
+header {
+  background: linear-gradient(to right, var(--dark), var(--primary));
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === 4 EFEITOS SOLICITADOS === */
+
+/* 1. PARALLAX (CSS puro) */
+header::after {
+  content: "";
+  background: url('assets/background.jpg') center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: translateZ(-1px) scale(1.2);
+}
+
+/* 2. MICROINTERAÇÕES (GSAP via CDN) */
+.news-card {
+  transition: all 0.2s;
+}
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 3. BACKGROUND DINÂMICO (CSS Animation) */
+@keyframes pulse-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dynamic-bg {
+  background: linear-gradient(270deg, var(--primary), var(--dark), var(--primary));
+  background-size: 200% 200%;
+  animation: pulse-gradient 8s ease infinite;
+}
+
+/* 4. HOVER EFFECTS (CSS puro) */
+.hover-grow {
+  transition: transform 0.3s;
+}
+.hover-grow:hover {
+  transform: scale(1.05);
+}
