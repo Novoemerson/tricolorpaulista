@@ -19,8 +19,8 @@ function ShareIcon() {
 
 // Dados fictícios para exemplo
 const mainNews = {
-  title: "Corinthians divulga lista de relacionados com três ausências e uma novidade contra o Racing",
-  summary: "Maycon dominado a bola em treino. O Corinthians se prepara para enfrentar o Racing...",
+  title: "SAF no São Paulo? Casares admite que é 'tendência' e revela 'plano mundial' até 2030",
+  summary: "Disse“A SAF não é um milagre, mas acredito que o melhor modelo é algo que priorize a gestão do futebol”, iniciou.",
   image: "/images/destaque.jpg",
   visits: "4.1 mil",
   comments: 49,
