@@ -1,29 +1,20 @@
 import '../styles/globals.css';
 
-export const metadata = {
-  title: "Tricolor Paulista",
-  description: "Site do São Paulo Futebol Clube com notícias, fórum, classificação e mais!"
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-white text-zinc-900 dark:bg-spfc-red dark:text-white min-h-screen">
-        <header className="w-full bg-spfc-red text-white py-4 shadow-md">
-          <div className="container mx-auto flex items-center justify-between px-4">
-            <div className="flex items-center gap-3">
-              <img src="/assets/icons/logo-icon.svg" alt="SPFC" className="h-8 w-8" />
-              <span className="font-bold text-xl tracking-tight">Tricolor Paulista</span>
-            </div>
-            <nav className="space-x-4">
-              <a href="/" className="hover:underline">Início</a>
-              <a href="/forum" className="hover:underline">Fórum</a>
-              <a href="/classificacao" className="hover:underline">Classificação</a>
-              <a href="/calendario" className="hover:underline">Calendário</a>
-            </nav>
-          </div>
+      <body className="bg-gray-100 text-gray-900">
+        <header className="bg-red-700 flex items-center px-4 py-2 shadow">
+          <img src="/spfc-logo.png" alt="SPFC" className="h-10 mr-2" />
+          <span className="text-white font-bold text-2xl tracking-wide">Tricolor Paulista</span>
+          <nav className="ml-auto space-x-6">
+            <a href="/" className="text-white hover:underline">Início</a>
+            <a href="/forum" className="text-white hover:underline">Fórum</a>
+            <a href="/classificacao" className="text-white hover:underline">Classificação</a>
+            <a href="/calendario" className="text-white hover:underline">Calendário</a>
+          </nav>
         </header>
-        <main className="container mx-auto px-4 py-8">{children}</main>
+        <main className="max-w-5xl mx-auto p-6">{children}</main>
       </body>
     </html>
   );
