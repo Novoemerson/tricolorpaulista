@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// Ícones SVG modernos
+// Ícones SVG
 function LikeIcon() {
   return (
     <svg width="20" height="20" fill="none" stroke="currentColor" className="inline align-middle text-yellow-600" viewBox="0 0 24 24"><path d="M6 21V9a2 2 0 0 1 2-2h5.28a2 2 0 0 1 1.72 1l3.12 5.2a2 2 0 0 1-1.72 3H8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -105,7 +105,7 @@ export default function Home() {
       <div className="h-[78px]"></div>
 
       {/* Grid principal com destaque e secundárias */}
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-12">
+      <section className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-16">
         {/* Card de destaque com imagem de fundo e overlay */}
         <article className="col-span-2 relative rounded-3xl overflow-hidden min-h-[340px] shadow-xl group flex flex-col justify-end">
           <Image
@@ -113,7 +113,7 @@ export default function Home() {
             alt="Destaque"
             fill
             className="object-cover object-center absolute inset-0 z-0"
-            style={{ filter: 'brightness(0.90)' }}
+            style={{ filter: 'brightness(0.88)' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
