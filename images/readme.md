@@ -1,1 +1,0 @@
-joimlkçjçkjjlkjlkjlkk~ç
