@@ -371,14 +371,20 @@ import { news } from '@/data/news'
 
 
 
-import ForumSection from "@/components/ForumSection";
+// Importações no topo
+import ForumSection from '@/components/ForumSection';
 
-// Dentro do seu componente Home:
+// Seu componente principal (única exportação)
 export default function Home() {
   return (
-    <div>
-      {/* Seu conteúdo existente... */}
+    <div className="max-w-7xl mx-auto px-4 py-8 bg-gray-50">
+      {/* Todo o conteúdo da página aqui */}
       <ForumSection />
     </div>
   );
+}
+
+// Exportações nomeadas (se necessário) - APENAS para funções auxiliares
+export function generateMetadata() {
+  return { title: 'Tricolor Paulista' };
 }
