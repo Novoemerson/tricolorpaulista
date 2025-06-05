@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Não precisa da configuração de 'images.domains' pois não usa imagens externas
-  // Configurações opcionais úteis:
-  output: 'standalone', // Melhor para deploy na Vercel
+  output: 'export', // Para páginas estáticas
   images: {
-    unoptimized: true // Desativa otimização se quiser (opcional)
-  }
+    unoptimized: true // Necessário para export estático
+  },
+  // Remove a configuração 'standalone' se não estiver usando
 }
 
 module.exports = nextConfig
