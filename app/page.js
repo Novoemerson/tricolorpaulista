@@ -166,7 +166,7 @@ export default function Home() {
       <div className="flex flex-col items-center">
         <div className="relative">
           <img
-            src="/images/topico1.jpg"
+            image: "/images/topico1.jpg"
             alt="Reforma do estatuto"
             className="w-36 h-36 object-cover rounded-full border-4 border-red-700 shadow-lg"
           />
@@ -203,7 +203,7 @@ export default function Home() {
       <div className="flex flex-col items-center">
         <div className="relative">
           <img
-            src="/images/topico2.jpg"
+            image: "/images/topico2.jpg"
             alt="Revolução tricolor"
             className="w-36 h-36 object-cover rounded-full border-4 border-red-700 shadow-lg"
           />
@@ -239,7 +239,7 @@ export default function Home() {
       <div className="flex flex-col items-center">
         <div className="relative">
           <img
-            src="/images/topico3.jpg"
+            image: "/images/topico3.jpg"
             alt="Parem de reclamar"
             className="w-36 h-36 object-cover rounded-full border-4 border-red-700 shadow-lg"
           />
@@ -273,7 +273,7 @@ export default function Home() {
       <div className="flex flex-col items-center">
         <div className="relative">
           <img
-            src="/images/topico4.jpg"
+            image: "/images/topico4.jpg"
             alt="A crise financeira"
             className="w-36 h-36 object-cover rounded-full border-4 border-red-700 shadow-lg"
           />
