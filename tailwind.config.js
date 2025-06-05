@@ -5,14 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      colors: {
-        'spfc-red': '#C10016',
-      },
-    },
-  },
   plugins: [
-    require('@tailwindcss/typography'),
+    require('@tailwindcss/typography') // REMOVA ESTA LINHA SE OS ERROS PERSISTIREM
   ],
 }
