@@ -33,3 +33,22 @@ module.exports = {
     require('@tailwindcss/forms'),
   ],
 }
+
+
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'spfc': {
+          'red': '#C10016',
+          'dark-red': '#8A0010',
+          'light-red': '#FF1A3A',
+          'gold': '#FFD700',
+        },
+      },
+      boxShadow: {
+        'spfc': '0 4px 6px -1px rgba(193, 0, 22, 0.2)',
+      }
+    }
+  }
+}
