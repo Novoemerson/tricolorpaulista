@@ -11,7 +11,7 @@ export const metadata = {
     siteName: "Tricolor Paulista",
     images: [
       {
-        url: "/images/spfc-logo.png", // Troque por sua imagem
+        url: "https://tricolorpaulista.vercel.app/images/", // Troque por sua imagem
         width: 1200,
         height: 600,
         alt: "Tricolor Paulista logo",
@@ -26,7 +26,7 @@ export const metadata = {
     title: "Tricolor Paulista - Notícias do São Paulo FC, resultados e próximos jogos",
     description: "Notícias do São Paulo, próximos jogos, resultados, vídeos, elenco e tudo sobre o Tricolor Paulista.",
     images: [
-      "/images/spfc-logo.png"
+      "https://tricolorpaulista.vercel.app/images/"
     ],
   },
 };
@@ -43,12 +43,12 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json?v=65"/>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
         <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/ginkglnlpcgmjafipbkpfoimoaoabami" />
-        <link rel="image_src" href="/images/spfc-logo.png" />
+        <link rel="image_src" href="https://tricolorpaulista.vercel.app/images/" />
         <meta property="fb:app_id" content="169492406456685" />
         <meta property="fb:pages" content="306026178972" />
-        <meta property="og:image" content="/images/spfc-logo.png" />
-        <meta property="og:image:secure_url" content="/images/spfc-logo.png" />
-        <meta property="og:image:url" content="/images/spfc-logo.png" />
+        <meta property="og:image" content="https://tricolorpaulista.vercel.app/images/" />
+        <meta property="og:image:secure_url" content="https://tricolorpaulista.vercel.app/images/" />
+        <meta property="og:image:url" content="https://tricolorpaulista.vercel.app/images/" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200"/>
         <meta property="og:image:height" content="600"/>
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:site" content="@TricolorPaulista"/>
         <meta name="twitter:title" content="Tricolor Paulista - Notícias do São Paulo FC, resultados e próximos jogos"/>
         <meta name="twitter:description" content="Notícias do São Paulo, próximos jogos, resultados, vídeos, elenco e tudo sobre o Tricolor Paulista."/>
-        <meta name="twitter:image" content="/images/spfc-logo.png" />
+        <meta name="twitter:image" content="https://tricolorpaulista.vercel.app/images/" />
         <meta name="script" content="-index"/>
         <link rel="preload" href="/fontes/cuprum-v14-latin-regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
         <link rel="preload" href="/fontes/cuprum-v14-latin-700.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
