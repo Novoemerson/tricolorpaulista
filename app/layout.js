@@ -35,6 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <head>
+        <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://api.meutimao.com.br/img/ico/chrome-touch-icon-152x152.png"/>
         <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://api.meutimao.com.br/img/ico/chrome-touch-icon-180x180.png"/>
         <meta name="msapplication-TileImage" content="https://api.meutimao.com.br/img/ico/apple-touch-144x144.png"/>
