@@ -368,3 +368,17 @@ import NewsCard from "@/components/NewsCard";
 
 
 import { news } from '@/data/news'
+
+
+
+import ForumSection from "@/components/ForumSection";
+
+// Dentro do seu componente Home:
+export default function Home() {
+  return (
+    <div>
+      {/* Seu conteúdo existente... */}
+      <ForumSection />
+    </div>
+  );
+}
