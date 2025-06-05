@@ -353,3 +353,14 @@ export default function Home() {
         </div>
   );
 }
+
+
+
+import NewsCard from "@/components/NewsCard";
+
+// ... no seu código, substitua as notícias secundárias por:
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {secondaryNews.map(news => (
+    <NewsCard key={news.id} news={news} />
+  ))}
+</div>
