@@ -1,0 +1,8 @@
+# Dependências
+node_modules/
+.next/
+.cache/
+
+# Ambiente
+.env*
+*.log
