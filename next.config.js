@@ -1,10 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export', // Para páginas estáticas
+// next.config.js
+module.exports = {
+  output: 'export',
   images: {
-    unoptimized: true // Necessário para export estático
-  },
-  // Remove a configuração 'standalone' se não estiver usando
+    unoptimized: true
+  }
 }
-
-module.exports = nextConfig
