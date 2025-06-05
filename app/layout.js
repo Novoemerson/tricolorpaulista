@@ -77,3 +77,22 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+
+<body className="home bg-gray-50 min-h-screen text-gray-900">
+  <header className="bg-red-700 text-white p-4 shadow-md">
+    <div className="container mx-auto flex justify-between items-center">
+      <div className="flex items-center">
+        <Image src="/spfc-logo.png" width={40} height={40} alt="SPFC" />
+        <span className="ml-2 font-bold text-xl">Tricolor Paulista</span>
+      </div>
+      <nav className="hidden md:flex space-x-6">
+        <a href="/" className="hover:text-yellow-300">Notícias</a>
+        <a href="/classificacao" className="hover:text-yellow-300">Classificação</a>
+        <a href="/calendario" className="hover:text-yellow-300">Calendário</a>
+        <a href="/forum" className="hover:text-yellow-300">Fórum</a>
+      </nav>
+    </div>
+  </header>
+  {children}
+</body>
