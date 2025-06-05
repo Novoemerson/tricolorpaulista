@@ -61,3 +61,42 @@ body {
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
 }
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos base personalizados */
+body {
+  @apply bg-spfc-gray text-gray-900 font-sans;
+}
+
+/* Títulos com estilo tricolor */
+h1, h2, h3 {
+  @apply font-heading text-spfc-red;
+}
+
+h1 {
+  @apply text-4xl font-bold;
+}
+
+/* Botões do SPFC */
+.btn-spfc {
+  @apply bg-spfc-red text-white px-6 py-2 rounded-lg 
+         hover:bg-spfc-dark-red transition-colors 
+         font-bold uppercase tracking-wider;
+}
+
+/* Cards de notícias */
+.news-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden 
+         hover:shadow-lg transition-shadow border-l-4 
+         border-spfc-red;
+}
+
+/* Efeito hover para links */
+a:hover {
+  @apply text-spfc-dark-red;
+}
