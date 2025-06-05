@@ -364,3 +364,7 @@ import NewsCard from "@/components/NewsCard";
     <NewsCard key={news.id} news={news} />
   ))}
 </div>
+
+
+
+import { news } from '@/data/news'
