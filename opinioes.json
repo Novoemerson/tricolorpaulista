@@ -1,0 +1,4 @@
+echo '[]' > opinioes.json
+git add opinioes.json
+git commit -m "Adiciona arquivo opinioes.json vazio"
+git push origin main
