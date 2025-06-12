@@ -5,6 +5,16 @@ if not os.path.exists('opinioes.json'):
 from flask import Flask, render_template, json
 import os
 
+@app.before_first_request
+def create_files():
+    try:
+        os.makedirs('templates', exist_ok=True)
+        if not os.path.exists('opinioes.json'):
+            with open('opinioes.json', 'w') as f:
+                json.dump([], f)
+    except:
+        pass
+
 app = Flask(__name__)
 
 @app.route('/')
