@@ -3,14 +3,14 @@ import requests
 import json
 from time import sleep
 
-DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
+COHERE_API_KEY = os.getenv('COHERE_API_KEY')
 
 def gerar_analise(titulo_noticia):
-    if not DEEPSEEK_API_KEY:
+    if not COHERE_API_KEY:
         return "Erro: Chave API não configurada"
     
     headers = {
-        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+        "Authorization": f"Bearer {COHERE_API_KEY}",
         "Content-Type": "application/json"
     }
     
