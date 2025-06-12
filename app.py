@@ -5,17 +5,12 @@ if not os.path.exists('opinioes.json'):
 from flask import Flask, render_template, json
 import os
 
-@app.before_first_request
-def create_files():
-    try:
-        os.makedirs('templates', exist_ok=True)
-        if not os.path.exists('opinioes.json'):
-            with open('opinioes.json', 'w') as f:
-                json.dump([], f)
-    except:
-        pass
-
 app = Flask(__name__)
+
+# Cria arquivos necessários ao iniciar
+if not os.path.exists('opinioes.json'):
+    with open('opinioes.json', 'w') as f:
+        json.dump([], f)
 
 @app.route('/')
 def home():
@@ -23,33 +18,22 @@ def home():
         with open('opinioes.json') as f:
             posts = json.load(f)
     except Exception as e:
-        posts = [{"erro": f"Nenhuma análise disponível. Erro: {str(e)}"}]
+        posts = [{"erro": f"Erro ao carregar análises: {str(e)}"}]
     return render_template('blog.html', posts=posts)
 
 @app.route('/atualizar')
 def atualizar():
     try:
-        # Dados de exemplo (substitua pelo seu crawler depois)
         dados_exemplo = [{
-            'titulo': 'São Paulo vence clássico',
-            'analise': 'Time mostrou grande recuperação no segundo tempo',
-            'comentario': 'O técnico acertou nas substituições!',
-            'link': 'https://exemplo.com/noticia'
+            'titulo': 'Exemplo: São Paulo vence clássico',
+            'analise': 'Time reagiu bem no segundo tempo',
+            'link': '#'
         }]
-        
         with open('opinioes.json', 'w') as f:
-            json.dump(dados_exemplo, f, ensure_ascii=False, indent=2)
-        return "3 análises atualizadas com sucesso!"
+            json.dump(dados_exemplo, f, indent=2)
+        return "Dados atualizados!"
     except Exception as e:
-        return f"Erro ao atualizar: {str(e)}"
-
-@app.route('/debug')
-def debug():
-    try:
-        with open('opinioes.json') as f:
-            return json.dumps(json.load(f)), 200, {'Content-Type': 'application/json'}
-    except Exception as e:
-        return f"Erro no debug: {str(e)}", 500
+        return f"Erro: {str(e)}"
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
