@@ -3,7 +3,7 @@ import requests
 import json
 from time import sleep
 
-DEEPSEEK_API_KEY = os.getenv('sk-5fab789dec8c4c1882eee4f8a35da586')
+DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
 
 def gerar_analise(titulo_noticia):
     if not DEEPSEEK_API_KEY:
