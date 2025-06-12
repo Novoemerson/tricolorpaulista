@@ -1,3 +1,7 @@
+import os
+if not os.path.exists('opinioes.json'):
+    with open('opinioes.json', 'w') as f:
+        json.dump([], f)
 from flask import Flask, render_template, json
 import os
 
