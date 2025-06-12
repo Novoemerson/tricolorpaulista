@@ -1,5 +1,5 @@
 import json
-from deepseek_api import DeepSeekAPI  # Você precisaria criar essa integração
+from deepseek_api import sk-5fab789dec8c4c1882eee4f8a35da586  # Você precisaria criar essa integração
 
 def gerar_opiniao(noticia):
     prompt = f"""
