@@ -33,7 +33,7 @@ def atualizar():
 def debug():
     try:
         with open('opinioes.json') as f:
-            return json.dumps(json.load(f), 200, {'Content-Type': 'application/json'}
+            return json.dumps(json.load(f)), 200, {'Content-Type': 'application/json'}
     except Exception as e:
         return f"Erro no debug: {str(e)}", 500
 
