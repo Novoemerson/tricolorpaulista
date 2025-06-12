@@ -1,43 +1,48 @@
 import os
 import requests
 import json
+from time import sleep
 
-DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
+DEEPSEEK_API_KEY = os.getenv('sk-5fab789dec8c4c1882eee4f8a35da586')
 
 def gerar_analise(titulo_noticia):
+    if not DEEPSEEK_API_KEY:
+        return "Erro: Chave API não configurada"
+    
     headers = {
         "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
         "Content-Type": "application/json"
     }
     
     prompt = f"""
-    Como analista esportivo e torcedor do São Paulo FC, comente sobre:
-    "{titulo_noticia}". Inclua:
-    1. Análise técnica objetiva
-    2. Opinião subjetiva como torcedor
-    3. Curiosidade ou dado histórico
+    Como analista esportivo do São Paulo FC, analise esta notícia:
+    "{titulo_noticia}"
+
+    Inclua:
+    1. Análise técnica (máximo 2 linhas)
+    2. Opinião como torcedor (1 linha)
+    3. Curiosidade histórica (1 linha)
     """
     
     data = {
         "model": "deepseek-chat",
-        "messages": [{"role": "user", "content": prompt}]
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.7
     }
     
-    response = requests.post(
-        "https://api.deepseek.com/v1/chat/completions",
-        headers=headers,
-        json=data
-    )
+    try:
+        response = requests.post(
+            "https://api.deepseek.com/v1/chat/completions",
+            headers=headers,
+            json=data,
+            timeout=30
+        )
+        response.raise_for_status()
+        return response.json()['choices'][0]['message']['content']
     
-    return response.json().get('choices', [{}])[0].get('message', {}).get('content', "Sem análise disponível")
+    except requests.exceptions.RequestException as e:
+        print(f"Erro na API: {str(e)}")
+        return f"Análise indisponível (Erro: {str(e)})"
     
-    except Exception as e:
-        return {"erro": f"Falha na API: {str(e)}"}
-
-if __name__ == '__main__':
-    # Teste local (rode apenas se tiver um .env com a chave)
-    with open('noticias.json') as f:
-        noticias = json.load(f)
-    
-    resultado = gerar_opiniao(noticias[0])  # Testa com a primeira notícia
-    print(json.dumps(resultado, indent=2))
+    except KeyError:
+        return "Erro ao processar resposta da API"
