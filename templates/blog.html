@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+    .comentario {
+        color: #666;
+        font-style: italic;
+    }
+    a {
+        color: red;
+        text-decoration: none;
+    }
+</style>
     <title>Blog São Paulo FC</title>
 </head>
 <body>
     <h1>Análises do Tricolor</h1>
     {% for post in posts %}
+    <!-- Adicione isto dentro do loop {% for post in posts %} -->
+<div class="post">
+    <h2>{{ post.titulo }}</h2>
+    <p><strong>Análise:</strong> {{ post.analise }}</p>
+    
+    <!-- NOVAS LINHAS -->
+    {% if post.comentario %}
+        <p class="comentario">🗨️ {{ post.comentario }}</p>
+    {% endif %}
+    
+    {% if post.link %}
+        <a href="{{ post.link }}" target="_blank">📰 Fonte original</a>
+    {% endif %}
+</div>
         <div>
             <h2>{{ post.titulo }}</h2>
             <p>{{ post.analise }}</p>
