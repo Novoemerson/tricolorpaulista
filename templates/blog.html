@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog São Paulo FC</title>
+</head>
+<body>
+    <h1>Análises do Tricolor</h1>
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.titulo }}</h2>
+            <p>{{ post.analise }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
