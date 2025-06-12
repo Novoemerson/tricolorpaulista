@@ -1,44 +1,35 @@
 import os
+import requests
 import json
-import requests  # Adicionei esta linha
 
-# Pega a chave da DeepSeek das variáveis de ambiente
-DEEPSEEK_KEY = os.getenv('sk-5fab789dec8c4c1882eee4f8a35da586')
+DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
 
-def gerar_opiniao(noticia):
-    if not DEEPSEEK_KEY:
-        return {"erro": "Chave API não configurada!"}
-
-    # Configuração da API (exemplo - ajuste conforme a API real da DeepSeek)
+def gerar_analise(titulo_noticia):
     headers = {
-        "Authorization": f"Bearer {DEEPSEEK_KEY}",
+        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
         "Content-Type": "application/json"
     }
     
+    prompt = f"""
+    Como analista esportivo e torcedor do São Paulo FC, comente sobre:
+    "{titulo_noticia}". Inclua:
+    1. Análise técnica objetiva
+    2. Opinião subjetiva como torcedor
+    3. Curiosidade ou dado histórico
+    """
+    
     data = {
         "model": "deepseek-chat",
-        "messages": [{
-            "role": "user",
-            "content": f"""
-            Analise esta notícia como um torcedor do São Paulo:
-            Título: {noticia['titulo']}
-            Link: {noticia['link']}
-
-            Gere:
-            1. Um resumo curto
-            2. Uma opinião apaixonada
-            3. Uma piada sobre o fato
-            """
-        }]
+        "messages": [{"role": "user", "content": prompt}]
     }
-
-    try:
-        response = requests.post(
-            "https://api.deepseek.com/v1/chat/completions",  # URL exemplo (verifique a real)
-            headers=headers,
-            json=data
-        )
-        return response.json()
+    
+    response = requests.post(
+        "https://api.deepseek.com/v1/chat/completions",
+        headers=headers,
+        json=data
+    )
+    
+    return response.json().get('choices', [{}])[0].get('message', {}).get('content', "Sem análise disponível")
     
     except Exception as e:
         return {"erro": f"Falha na API: {str(e)}"}
