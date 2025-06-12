@@ -16,19 +16,16 @@ def home():
 # Rota para gerar análises (CRÍTICA)
 @app.route('/atualizar')
 def atualizar():
-    try:
-        # Simulando dados de exemplo (substitua pelo seu crawler real)
-        dados_exemplo = [{
-            'titulo': 'São Paulo vence clássico',
-            'analise': 'Time mostrou grande recuperação no segundo tempo',
-            'comentario': 'O técnico acertou nas substituições!',
-            'link': 'https://exemplo.com/noticia'
-        }]
-        
-        with open('opinioes.json', 'w') as f:
-            json.dump(dados_exemplo, f, ensure_ascii=False, indent=2)
-            
-        return "Análises atualizadas com sucesso!"
+    from crawler_saopaulo import crawler_ge  # Importe seu crawler
+    from gerador_opiniao import gerar_opiniao  # Importe o gerador de IA
+    
+    noticias = crawler_ge()  # Coleta notícias
+    opinioes = [gerar_opiniao(n) for n in noticias[:3]]  # Limita a 3 análises
+    
+    with open('opinioes.json', 'w') as f:
+        json.dump(opinioes, f, ensure_ascii=False, indent=2)
+    
+    return f"{len(opinioes)} análises geradas!"
     except Exception as e:
         return f"Erro: {str(e)}"
 
