@@ -1,48 +1,34 @@
 import os
-import requests
 import json
 from time import sleep
 
-COHERE_API_KEY = os.getenv('COHERE_API_KEY')
+import requests
 
 def gerar_analise(titulo_noticia):
-    if not COHERE_API_KEY:
-        return "Erro: Chave API não configurada"
-    
-    headers = {
-        "Authorization": f"Bearer {COHERE_API_KEY}",
-        "Content-Type": "application/json"
-    }
-    
-    prompt = f"""
-    Como analista esportivo do São Paulo FC, analise esta notícia:
-    "{titulo_noticia}"
-
-    Inclua:
-    1. Análise técnica (máximo 2 linhas)
-    2. Opinião como torcedor (1 linha)
-    3. Curiosidade histórica (1 linha)
-    """
-    
-    data = {
-        "model": "deepseek-chat",
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.7
-    }
-    
     try:
-        response = requests.post(
-            "https://api.deepseek.com/v1/chat/completions",
-            headers=headers,
-            json=data,
-            timeout=30
+        prompt = f"""
+        Como torcedor do São Paulo FC, analise esta notícia em 3 frases curtas:
+        1. RESUMO: Extraia o fato principal
+        2. OPINIÃO: Dê uma opinião polêmica
+        3. CURIOSIDADE: Relacione com história do clube
+
+        Notícia: '{titulo_noticia}'
+        """
+        
+        resposta = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={
+                "Authorization": "Bearer free",  # Chave gratuita
+                "HTTP-Referer": "https://seusite.com",  # Substitua pelo seu URL
+                "X-Title": "Blog SPFC"  # Identificação opcional
+            },
+            json={
+                "model": "mistralai/mistral-7b-instruct",  # Modelo gratuito
+                "messages": [{"role": "user", "content": prompt}]
+            },
+            timeout=15
         )
-        response.raise_for_status()
-        return response.json()['choices'][0]['message']['content']
+        return resposta.json()['choices'][0]['message']['content']
     
-    except requests.exceptions.RequestException as e:
-        print(f"Erro na API: {str(e)}")
-        return f"Análise indisponível (Erro: {str(e)})"
-    
-    except KeyError:
-        return "Erro ao processar resposta da API"
+    except Exception as e:
+        return f"Análise gerada automaticamente (erro na IA: {str(e)})"
