@@ -1,31 +1,42 @@
 import requests
+import json
 
 def gerar_analise(titulo_noticia):
     try:
+        # Configuração otimizada para o plano free
         prompt = f"""
-        Como torcedor do SPFC, analise em 3 frases curtas:
-        1. Fato principal sobre '{titulo_noticia}'
-        2. Opinião pessoal (seja polêmico)
-        3. Dado histórico comparativo
+        Como torcedor fanático do São Paulo FC, analise este resultado em 3 frases:
+        1. Destaque técnico (estatística ou jogada)
+        2. Opinião contundente
+        3. Comparação histórica
 
-        Use emojis e linguagem vibrante!
+        Jogo: {titulo_noticia}
         """
         
         resposta = requests.post(
             "https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer free",
+                "Authorization": "Bearer free",  # Funciona sem cadastro
                 "HTTP-Referer": "https://tricolorpaulista.onrender.com",
-                "X-Title": "Blog SPFC"
+                "Content-Type": "application/json"
             },
             json={
                 "model": "mistralai/mistral-7b-instruct",
-                "messages": [{"role": "user", "content": prompt}]
+                "messages": [{
+                    "role": "user",
+                    "content": prompt
+                }]
             },
-            timeout=20
+            timeout=25
         )
-        return resposta.json()['choices'][0]['message']['content']
+        
+        # Debug avançado (descomente se precisar)
+        # print("Status:", resposta.status_code)
+        # print("Resposta:", resposta.text)
+        
+        dados = resposta.json()
+        return dados['choices'][0]['message']['content']
     
     except Exception as e:
-        print(f"Erro na API: {str(e)}")  # Debug
-        return f"⚽ {titulo_noticia}: O Tricolor arrasou! (IA offline)"
+        print(f"Erro detalhado: {str(e)}")  # Log completo
+        return f"⚽ {titulo_noticia}: O Tricolor mostrou seu poderio! (Sistema em ajustes)"
