@@ -26,3 +26,7 @@ def gerar_analise(titulo_noticia):
     
     except Exception as e:
         return f"⚽ Análise em desenvolvimento (erro técnico: {str(e)})"
+
+# Fallback local (remove depois de testar a API)
+if __name__ == "__main__":
+    print(gerar_analise("São Paulo vence clássico"))
