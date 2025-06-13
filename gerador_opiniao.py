@@ -2,10 +2,7 @@ import requests
 
 def gerar_analise(titulo_noticia):
     try:
-        prompt = f"""Como torcedor do SPFC, analise em 3 frases:
-        1. Fato principal sobre '{titulo_noticia}'
-        2. Opinião pessoal sobre o desempenho
-        3. Expectativa para os próximos jogos"""
+        prompt = f"Como torcedor do SPFC, analise em 3 pontos: '{titulo_noticia}'"
         
         resposta = requests.post(
             "https://openrouter.ai/api/v1/chat/completions",
@@ -15,13 +12,20 @@ def gerar_analise(titulo_noticia):
                 "X-Title": "Blog SPFC"
             },
             json={
-                "model": "mistralai/mistral-7b-instruct",  # Corrigido "node1" para "model"
-                "messages": [{"role": "user", "content": prompt}]  # Corrigido "message" para "messages"
+                "model": "gryphe/mythomax",  # Modelo alternativo
+                "messages": [{
+                    "role": "user",
+                    "content": prompt
+                }]
             },
-            timeout=20
+            timeout=30
         )
-        data = resposta.json()  # Corrigido: usar a variável 'resposta' já existente
+        
+        # Debug: mostra a resposta completa
+        print("Resposta da API:", resposta.text)
+        
+        data = resposta.json()
         return data['choices'][0]['message']['content']
     
     except Exception as e:
-        return f"⚽ Análise automática indisponível no momento. Tente novamente mais tarde. (Erro técnico: {str(e)})"
+        return f"🔴 Análise via IA indisponível. Detalhes: {str(e)}"
