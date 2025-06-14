@@ -6,7 +6,7 @@ def gerar_analise(titulo_noticia):
         resposta = requests.post(
             "https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer free",
+                "Authorization": "Bearer CHAVE_API_DO_ROUTERO_OPEN"  # Nova chave pessoal,
                 "HTTP-Referer": "https://tricolorpaulista.onrender.com",
                 "Content-Type": "application/json"
             },
